@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noções Básicas de Estatística para Pesquisa</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Montserrat', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#1a2b4c',
+                            blue: '#2563eb',
+                            indigo: '#4f46e5',
+                            darkIndigo: '#3730a3',
+                        }
+                    },
+                    boxShadow: {
+                        'hero-card': '0 20px 45px -15px rgba(30, 58, 138, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset',
+                        'topic-card': '0 8px 20px -6px rgba(0, 0, 0, 0.04)',
+                        'topic-hover': '0 16px 30px -10px rgba(79, 70, 229, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f4f8fc;
+            color: #1a2b4c;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-interactive {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-interactive:hover {
+            transform: translateY(-4px);
+        }
+
+        .modal-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-indigo-600 selection:text-white">
+
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo / Title -->
+                <a href="#" class="font-title text-base sm:text-lg md:text-xl font-black tracking-wider text-brand-navy uppercase flex items-center gap-3">
+                    <span class="w-3 h-7 bg-indigo-600 rounded-full inline-block"></span>
+                    ESTATÍSTICA PARA PESQUISA
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-bold text-sm text-slate-700">
+                    <a href="#video-section" class="hover:text-indigo-600 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-circle-play text-indigo-500"></i> Vídeo
+                    </a>
+                    <a href="#conteudos" class="hover:text-indigo-600 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-book-open text-indigo-500"></i> Conteúdos
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="text-slate-800 p-2 focus:outline-none" aria-label="Abrir menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 font-semibold text-slate-800">
+            <a href="#video-section" onclick="toggleMobileMenu()" class="block py-2 border-b border-slate-100">Vídeo Explicativo</a>
+            <a href="#conteudos" onclick="toggleMobileMenu()" class="block py-2">Conteúdos do Curso</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-8 pb-16">
+        <section class="max-w-5xl mx-auto px-4 sm:px-6">
+            
+            <!-- Hero Card -->
+            <div class="bg-gradient-to-b from-white via-slate-50/60 to-indigo-50/30 rounded-3xl p-8 sm:p-12 md:p-16 border border-slate-200/80 shadow-hero-card text-center relative overflow-hidden my-4">
+                
+                <!-- Title -->
+                <h1 class="font-title text-3xl sm:text-4xl md:text-5xl font-black text-brand-navy tracking-tight uppercase mb-6 leading-tight">
+                    O QUE É ESTATÍSTICA?
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="max-w-2xl mx-auto text-slate-600 font-medium text-base sm:text-lg md:text-xl leading-relaxed mb-10">
+                    é uma ferramenta matemática que organiza e analisa dados para identificar relações e verificar se um resultado ocorre ao acaso ou representa um padrão.
+                </p>
+
+                <!-- Single Action Button -->
+                <div class="flex items-center justify-center">
+                    <button 
+                        onclick="openVideoModal()" 
+                        class="w-full sm:w-auto px-10 py-4 sm:py-5 rounded-2xl bg-indigo-700 hover:bg-indigo-800 text-white font-black text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3"
+                    >
+                        ACESSAR VÍDEO SOBRE O CONTEÚDO
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="video-section" class="max-w-5xl mx-auto px-4 sm:px-6 pt-6">
+            <div class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                
+                <!-- Video Thumbnail Container -->
+                <div class="w-full md:w-1/2 relative group rounded-2xl overflow-hidden cursor-pointer shadow-md bg-slate-900" onclick="openVideoModal()">
+                    <img 
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" 
+                        alt="Thumbnail Vídeo de Estatística" 
+                        class="w-full aspect-video object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent"></div>
+                    
+                    <!-- Play Button Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-indigo-600 text-white shadow-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play text-xl ml-1"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-3 left-3 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/10">
+                        <i class="fa-brands fa-youtube text-red-500 mr-1.5"></i> Assistir Vídeo
+                    </div>
+                </div>
+
+                <!-- Text Block for Video -->
+                <div class="w-full md:w-1/2 text-left space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100 inline-block">
+                        Vídeo Explicativo
+                    </span>
+                    <h2 class="font-title text-2xl font-black text-brand-navy leading-snug">
+                        Entenda a Estatística Científica
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Aprenda visualmente os princípios essenciais de amostragem, p-valor, testes de hipóteses e medidas estatísticas em pesquisa.
+                    </p>
+                    <div class="pt-2">
+                        <button 
+                            onclick="openVideoModal()" 
+                            class="inline-flex items-center gap-2 text-sm font-bold text-indigo-700 hover:text-indigo-900 transition-colors bg-indigo-50 px-4 py-2 rounded-xl border border-indigo-100"
+                        >
+                            <i class="fa-solid fa-play text-xs"></i>
+                            Abrir Player de Vídeo
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="conteudos" class="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="font-title text-2xl sm:text-3xl md:text-4xl font-black text-brand-navy uppercase tracking-tight">
+                    Saiba mais sobre os conteúdos
+                </h2>
+                <p class="text-slate-500 text-sm sm:text-base mt-2 font-medium">Conceitos fundamentais organizados em 9 temas de estudo</p>
+            </div>
+
+            <!-- Pastel Topic Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Tema 1: População, amostra e representatividade (Azul Pastel) -->
+                <a href="tema1.html" class="block bg-blue-50/70 hover:bg-blue-100/80 border border-blue-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-blue-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-blue-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-blue-100">Tema 1</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        População, amostra e representatividade
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Entenda o grupo total de estudo, a fração selecionada e como garantir que a amostra represente a população fielmente.
+                    </p>
+                </a>
+
+                <!-- Tema 2: Tipos de amostragem (Verde Menta Pastel) -->
+                <a href="tema2.html" class="block bg-emerald-50/70 hover:bg-emerald-100/80 border border-emerald-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-emerald-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-emerald-100">Tema 2</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Tipos de amostragem (probabilística e não probabilística)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Conheça a diferença entre métodos aleatórios com chances conhecidas de seleção e amostragem por conveniência.
+                    </p>
+                </a>
+
+                <!-- Tema 3: Análises (Lavanda Pastel) -->
+                <a href="tema3.html" class="block bg-purple-50/70 hover:bg-purple-100/80 border border-purple-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-purple-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-purple-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-purple-100">Tema 3</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Análises: descritiva, bivariada, múltipla (visão geral)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Visão geral de como sintetizar dados isolados, cruzar duas variáveis ou avaliar múltiplos fatores simultaneamente.
+                    </p>
+                </a>
+
+                <!-- Tema 4: Tipos de variáveis (Pêssego Pastel) -->
+                <a href="tema4.html" class="block bg-amber-50/70 hover:bg-amber-100/80 border border-amber-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-amber-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-amber-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-amber-100">Tema 4</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Tipos de variáveis (qualitativas/quantitativas; discreta/contínua)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Classificação dos dados medidos em categorias (nominais/ordinais) ou números (discretos ou contínuos).
+                    </p>
+                </a>
+
+                <!-- Tema 5: Estatística descritiva (Creme/Amarelo Pastel) -->
+                <a href="tema5.html" class="block bg-yellow-50/70 hover:bg-yellow-100/80 border border-yellow-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-yellow-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-yellow-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-yellow-100">Tema 5</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Estatística descritiva: medidas de tendência e dispersão, n e percentual
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Aprenda sobre média, mediana, desvio-padrão, amplitudes, frequências absolutas (n) e percentuais (%).
+                    </p>
+                </a>
+
+                <!-- Tema 6: Estatística inferencial (Ciano Pastel) -->
+                <a href="tema6.html" class="block bg-cyan-50/70 hover:bg-cyan-100/80 border border-cyan-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-cyan-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-cyan-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-cyan-100">Tema 6</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Estatística inferencial: o que ela tenta responder
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Descubra como extrapolar os dados da amostra para a população total testando hipóteses científicas.
+                    </p>
+                </a>
+
+                <!-- Tema 7: P-valor (Rosa Pastel) -->
+                <a href="tema7.html" class="block bg-rose-50/70 hover:bg-rose-100/80 border border-rose-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-rose-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-rose-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-rose-100">Tema 7</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        P-valor
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Compreenda a probabilidade de um resultado ter ocorrido por puro acaso e a significância estatística (p &lt; 0,05).
+                    </p>
+                </a>
+
+                <!-- Tema 8: Intervalo de confiança (Sálvia/Teal Pastel) -->
+                <a href="tema8.html" class="block bg-teal-50/70 hover:bg-teal-100/80 border border-teal-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-teal-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-teal-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-teal-100">Tema 8</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Intervalo de confiança
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Entenda a faixa estimada (geralmente IC 95%) dentro da qual o verdadeiro valor populacional se encontra.
+                    </p>
+                </a>
+
+                <!-- Tema 9: Medidas de associação (Índigo Pastel - estendido em telas maiores) -->
+                <a href="tema9.html" class="block bg-indigo-50/70 hover:bg-indigo-100/80 border border-indigo-200/70 rounded-3xl p-7 shadow-topic-card hover:shadow-topic-hover card-interactive md:col-span-2">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-3.5 h-3.5 bg-indigo-600 rounded-full inline-block flex-shrink-0"></span>
+                        <span class="text-xs font-bold text-indigo-800 uppercase tracking-wider bg-white/80 px-2.5 py-0.5 rounded-full border border-indigo-100">Tema 9</span>
+                    </div>
+                    <h3 class="font-title text-xl font-bold text-brand-navy mb-2">
+                        Medidas de associação (OR, RR)
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Calcule a força de associação entre exposição e desfecho através da Razão de Chances (Odds Ratio) e Risco Relativo (RR).
+                    </p>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="videoModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative animate-fade-in">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-5 border-b border-slate-100 bg-slate-50">
+                <h3 class="font-title text-lg font-bold text-brand-navy flex items-center gap-2">
+                    <i class="fa-brands fa-youtube text-red-600 text-xl"></i>
+                    Estatística Básica para Pesquisa
+                </h3>
+                <button onclick="closeVideoModal()" class="text-slate-400 hover:text-slate-700 w-10 h-10 rounded-full hover:bg-slate-200/60 transition flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Video Player Wrapper -->
+            <div class="relative aspect-video bg-black">
+                <iframe 
+                    id="youtubeIframe"
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9XcQq" 
+                    title="Vídeo de Estatística para Pesquisa"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm">
+                <span class="text-slate-500">Aula introdutória completa</span>
+                <a 
+                    href="https://www.youtube.com/watch?v=dQw4w9XcQq" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="text-indigo-700 font-bold hover:underline flex items-center gap-1.5"
+                >
+                    Abrir no YouTube <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-medium text-slate-600 mb-1">Noções Básicas de Estatística para Pesquisa</p>
+            <p>© Guia Educacional para Pesquisa Acadêmica e Científica.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functions
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.classList.add('modal-active');
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.classList.remove('modal-active');
+                
+                // Reset video playback on close
+                const iframe = document.getElementById('youtubeIframe');
+                if (iframe) {
+                    const src = iframe.src;
+                    iframe.src = src;
+                }
+            }
+        }
+
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('videoModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+    </script>
+</body>
+</html>
