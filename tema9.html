@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medidas de Associação (OR e RR) - Estatística para Pesquisa</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons para suporte visual -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOPO (Cabeçalho) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-14 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        Medidas de Associação (OR e RR)
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Entenda a força da relação entre um fator de exposição (hábito ou tratamento) e um desfecho de saúde de forma didática e prática.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
+
+    <!-- SEÇÃO 1: O QUE SÃO MEDIDAS DE ASSOCIAÇÃO -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="link"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">1. O que são Medidas de Associação?</h2>
+      </div>
+      
+      <p class="text-slate-600 leading-relaxed mb-6">
+        As <strong>medidas de associação</strong> são ferramentas estatísticas utilizadas para avaliar a força da relação entre uma <strong>Exposição</strong> (um hábito, tratamento ou fator de risco) e um <strong>Desfecho</strong> (o surgimento de uma doença, cura ou complicação).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-xl border border-indigo-100 bg-indigo-50/50">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold mb-2">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+            <span>Exposição (Causa / Fator)</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Exemplos: Tabagismo, consumo de álcool, uso de uma nova medicação ou vacina.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-indigo-100 bg-indigo-50/50">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold mb-2">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+            <span>Desfecho (Efeito / Resultado)</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Exemplos: Desenvolvimento de câncer de pulmão, doença no fígado ou prevenção de infecção.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: COMPARATIVO RR vs OR -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="git-compare"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">2. Risco Relativo (RR) vs. Razão de Chances (OR)</h2>
+          <p class="text-xs text-slate-500">Qual a diferença e quando aplicar cada medida?</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- CARD RISCO RELATIVO (RR) -->
+        <div class="p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50/30">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-3 py-1 rounded-full">Estudos Prospectivos (Coorte)</span>
+            <span class="text-xs font-bold text-indigo-600">Procura o Risco</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Risco Relativo (RR)</h3>
+          
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Compara a probabilidade de um evento acontecer em um grupo de pessoas <strong>expostas</strong> a um fator em relação ao grupo <strong>não exposto</strong>. O pesquisador acompanha os participantes ao longo do tempo.
+          </p>
+
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 mb-4 shadow-sm">
+            <span class="text-xs font-bold text-indigo-700 uppercase block mb-1">O que responde:</span>
+            <p class="text-xs text-slate-700 italic">
+              "Quantas vezes mais risco o grupo exposto tem de desenvolver o problema em comparação ao grupo não exposto?"
+            </p>
+          </div>
+
+          <div class="bg-indigo-100/60 p-3.5 rounded-lg border border-indigo-200 text-xs text-indigo-950">
+            <strong>Exemplo Prático:</strong> Em um estudo sobre tabagismo e câncer, um <strong>RR = 3</strong> indica que os fumantes têm <strong>3 vezes mais risco</strong> de desenvolver a doença do que os não fumantes.
+          </div>
+        </div>
+
+        <!-- CARD RAZÃO DE CHANCES (OR) -->
+        <div class="p-6 rounded-2xl border-2 border-indigo-200 bg-indigo-50/30">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-3 py-1 rounded-full">Estudos Retrospectivos (Caso-Controle)</span>
+            <span class="text-xs font-bold text-indigo-600">Procura a Chance</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Razão de Chances (OR - Odds Ratio)</h3>
+          
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Compara a <strong>chance</strong> de um evento ter ocorrido em um grupo em relação a outro. O pesquisador seleciona pessoas doentes (casos) e saudáveis (controles) e olha para o passado.
+          </p>
+
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 mb-4 shadow-sm">
+            <span class="text-xs font-bold text-indigo-700 uppercase block mb-1">O que responde:</span>
+            <p class="text-xs text-slate-700 italic">
+              "Qual é a chance de a exposição ter acontecido entre os doentes em comparação com os não doentes?"
+            </p>
+          </div>
+
+          <div class="bg-indigo-100/60 p-3.5 rounded-lg border border-indigo-200 text-xs text-indigo-950">
+            <strong>Exemplo Prático:</strong> Em um estudo sobre álcool e doenças no fígado, um <strong>OR = 2</strong> indica que a chance de consumo excessivo de álcool é <strong>2 vezes maior</strong> nos pacientes doentes do que nos saudáveis.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: COMO INTERPRETAR OS RESULTADOS -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="scale"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">3. Como interpretar os resultados (Regra do 1)</h2>
+          <p class="text-xs text-slate-500">Tanto para o RR quanto para o OR, a interpretação utiliza o número 1 como ponto neutro</p>
+        </div>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        O número <strong>1</strong> representa a <strong>nulidade (neutralidade)</strong>. Ou seja, indica que a exposição não alterou em nada a chance ou o risco do desfecho acontecer.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- VALOR IGUAL A 1 -->
+        <div class="p-5 rounded-xl border-2 border-slate-200 bg-slate-50 text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Sem Associação</span>
+          <h3 class="text-2xl font-extrabold text-slate-700 mb-2">RR ou OR = 1</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            O risco ou a chance é igual em ambos os grupos. A exposição não afeta o resultado.
+          </p>
+          <span class="inline-block bg-slate-200 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+            Efeito Neutro
+          </span>
+        </div>
+
+        <!-- VALOR MAIOR QUE 1 -->
+        <div class="p-5 rounded-xl border-2 border-rose-200 bg-rose-50/40 text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-700 block mb-1">Aumenta o Risco</span>
+          <h3 class="text-2xl font-extrabold text-rose-600 mb-2">RR ou OR &gt; 1</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            Indica um <strong>Fator de Risco</strong>. A exposição aumenta a chance ou o risco do evento.
+          </p>
+          <span class="inline-block bg-rose-100 text-rose-800 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+            Exemplo: RR = 1,5 (+50% de risco)
+          </span>
+        </div>
+
+        <!-- VALOR MENOR QUE 1 -->
+        <div class="p-5 rounded-xl border-2 border-emerald-200 bg-emerald-50/40 text-center">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">Reduz o Risco</span>
+          <h3 class="text-2xl font-extrabold text-emerald-600 mb-2">RR ou OR &lt; 1</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            Indica um <strong>Fator de Proteção</strong>. A exposição diminui o risco do evento.
+          </p>
+          <span class="inline-block bg-emerald-100 text-emerald-800 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+            Exemplo: RR = 0,80 (-20% de risco)
+          </span>
+        </div>
+
+      </div>
+
+      <!-- RECAPITULAÇÃO RÁPIDA -->
+      <div class="mt-6 bg-indigo-50/80 border border-indigo-100 p-4 rounded-xl flex items-start space-x-3">
+        <i data-lucide="shield-check" class="text-indigo-600 shrink-0 mt-0.5 w-5 h-5"></i>
+        <p class="text-xs text-indigo-950 leading-relaxed">
+          <strong>Aplicações do Fator de Proteção (RR &lt; 1):</strong> Muito comum em testes clínicos de vacinas, tratamentos preventivos ou mudanças saudáveis na alimentação, onde o objetivo da intervenção é justamente reduzir a probabilidade do problema surgir.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#1a1b35] text-slate-400 text-center py-6 text-sm border-t border-slate-800">
+    <p>Estatística para Pesquisa &copy; 2026 - Material Didático e Interativo</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatística para Pesquisa - Técnicas de Amostragem</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- TOP BAR (Cabeçalho) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-12 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
+        População, Amostra e Representatividade
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Entenda os conceitos fundamentais que sustentam pesquisas e análises de dados confiáveis.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-5xl mx-auto px-4 md:px-6 py-10 flex-grow w-full space-y-12">
+
+    <!-- INTRODUÇÃO -->
+    <section class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">
+        2. Amostragem
+      </h2>
+      <h3 class="text-xl font-semibold text-indigo-700 mb-3">
+        O que são Técnicas de Amostragem?
+      </h3>
+      <p class="text-slate-700 text-base leading-relaxed mb-6">
+        Depois de calcular o número de pessoas necessárias para a pesquisa (o tamanho da amostra), é preciso definir o método de escolha dessas pessoas. Existem dois caminhos fundamentais:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-indigo-50/70 p-5 rounded-xl border border-indigo-100">
+          <h4 class="font-bold text-indigo-900 text-lg mb-2 flex items-center gap-2">
+            <span class="w-3 h-3 bg-indigo-600 rounded-full inline-block"></span>
+            Amostragem Probabilística (Aleatória)
+          </h4>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Todos os indivíduos da população têm uma chance matemática de serem escolhidos. É feita por sorteios e garante maior precisão e isenção.
+          </p>
+        </div>
+
+        <div class="bg-amber-50/70 p-5 rounded-xl border border-amber-100">
+          <h4 class="font-bold text-amber-900 text-lg mb-2 flex items-center gap-2">
+            <span class="w-3 h-3 bg-amber-600 rounded-full inline-block"></span>
+            Amostragem Não Probabilística (Não Aleatória)
+          </h4>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Não há sorteio. A escolha depende do acesso do pesquisador, de critérios pré-definidos ou da indicação dos participantes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 1: PROBABILÍSTICA -->
+    <section class="space-y-8">
+      <div class="flex items-center gap-3">
+        <span class="bg-indigo-600 text-white font-bold px-3 py-1 rounded-lg text-sm">1</span>
+        <h2 class="text-2xl font-bold text-slate-900">Amostragem Aleatória ou Probabilística</h2>
+      </div>
+
+      <!-- A. CASUAL SIMPLES -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">
+          A. Casual ou Aleatória Simples (Sorteio Direto)
+        </h3>
+        
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            É o formato mais tradicional. Lista-se a população inteira, atribui-se um número a cada indivíduo e realiza-se um sorteio direto até atingir o número necessário. Todos têm exatamente a mesma probabilidade de serem sorteados.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Em uma academia com 500 alunos de musculação, o pesquisador numera todos de 1 a 500 e usa um sistema eletrónico para sortear 100 números aleatórios para responder a um questionário sobre saúde mental.
+          </p>
+        </div>
+
+        <!-- SIMULADOR CASUAL SIMPLES (TEMA CLARO) -->
+        <div class="bg-indigo-50/80 p-6 rounded-2xl border border-indigo-100 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-indigo-200/80">
+            <div>
+              <h4 class="font-bold text-lg text-indigo-950">Simulador: Academia (500 Alunos)</h4>
+              <p class="text-xs text-slate-600">População numerada de 1 a 500. Clique abaixo para sortear os 100 alunos.</p>
+            </div>
+            <div class="flex gap-2">
+              <button id="btn-sortear-500" onclick="sortearSimples()" class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-all shadow">
+                Sortear 100 Alunos
+              </button>
+              <button onclick="limparSimples()" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-3 py-2 rounded-lg text-sm transition-all">
+                Resetar
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mb-3 text-xs text-indigo-900 font-semibold">
+            <span>Grid da População (1 até 500)</span>
+            <span id="status-simples" class="text-indigo-700">0 / 100 sorteados</span>
+          </div>
+
+          <!-- Grade de 500 alunos -->
+          <div id="grid-500" class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-20 gap-1.5 h-64 overflow-y-auto p-2 bg-white rounded-xl custom-scrollbar border border-indigo-200 text-center font-mono text-xs shadow-inner">
+            <!-- Gerado via JavaScript (1 a 500) -->
+          </div>
+        </div>
+      </article>
+
+      <!-- B. AMOSTRAGEM SISTEMÁTICA -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">
+          B. Amostragem Sistemática (Seleção por Intervalo Regrado)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Em vez de sortear todos os elementos um a um, estabelece-se um intervalo fixo (de quantos em quantos indivíduos haverá uma seleção). O pesquisador pode sortear apenas o primeiro nome e depois seguir o padrão fixado.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Numa lista de 105 pessoas em que se precisa de uma amostra, decide-se selecionar cada 3.º elemento (3, 6, 9, 12... até ao 105).
+          </p>
+        </div>
+
+        <!-- SIMULADOR SISTEMÁTICA (TEMA CLARO & ORDEM CRESCENTE INICIANDO EM 3) -->
+        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
+            <div>
+              <h4 class="font-bold text-lg text-slate-900">Simulador: Intervalo Regrado (105 Pessoas)</h4>
+              <p class="text-xs text-slate-600">Escolha o intervalo de seleção para destacar os participantes.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <label class="text-xs font-semibold text-slate-700">Intervalo (k):</label>
+              <select id="select-intervalo" onchange="gerarSistematica()" class="bg-white text-indigo-900 font-bold px-3 py-1.5 rounded-lg border border-slate-300 text-sm shadow-sm">
+                <option value="3" selected>Cada 3º (3, 6, 9...)</option>
+                <option value="5">Cada 5º (5, 10, 15...)</option>
+                <option value="7">Cada 7º (7, 14, 21...)</option>
+                <option value="10">Cada 10º (10, 20, 30...)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="status-sistematica" class="text-xs text-indigo-700 mb-3 font-semibold">
+            Selecionados: 35 de 105 pessoas (A cada 3º indivíduo)
+          </div>
+
+          <div id="grid-105" class="grid grid-cols-7 sm:grid-cols-10 md:grid-cols-15 gap-1.5 h-48 overflow-y-auto p-2 bg-white rounded-xl custom-scrollbar border border-slate-200 text-center font-mono text-xs shadow-inner">
+            <!-- Gerado via JS (1 a 105) -->
+          </div>
+        </div>
+      </article>
+
+      <!-- C. ESTRATIFICADA -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">
+          C. Amostragem Estratificada (Divisão por Subgrupos Proporcionais)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            A população é dividida em "estratos" (subgrupos com características em comum). Para manter a fidelidade do estudo, realiza-se um sorteio dentro de cada subgrupo respeitando as exatas percentagens que eles ocupam na população real.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed mb-2">
+            Numa escola de 1.000 alunos dividida em:
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-slate-700 mb-3">
+            <li><strong>1.º Ano:</strong> 400 alunos (40% do total)</li>
+            <li><strong>2.º Ano:</strong> 350 alunos (35% do total)</li>
+            <li><strong>3.º Ano:</strong> 250 alunos (25% do total)</li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed">
+            Para extrair uma amostra representativa de 278 alunos, sorteiam-se 111 alunos do 1.º ano (40%), 97 do 2.º ano (35%) e 70 do 3.º ano (25%).
+          </p>
+        </div>
+
+        <!-- SIMULADOR ESTRATIFICADA (TEMA CLARO) -->
+        <div class="bg-indigo-50/80 p-6 rounded-2xl border border-indigo-100 shadow-sm space-y-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-200/80 pb-4">
+            <div>
+              <h4 class="font-bold text-lg text-indigo-950">Calculadora Proporcional de Estratos (Até 1.000)</h4>
+              <p class="text-xs text-slate-600">Ajuste o tamanho desejado para a amostra geral da escola (1 a 1000 alunos).</p>
+            </div>
+            
+            <div class="bg-white p-3 rounded-xl border border-indigo-200 flex items-center gap-4 shadow-sm">
+              <label for="range-amostra" class="text-xs font-semibold text-indigo-900">Amostra Total:</label>
+              <input type="range" id="range-amostra" min="1" max="1000" value="278" oninput="atualizarEstratificada(this.value)" class="w-32 md:w-48 accent-indigo-600">
+              <span id="val-amostra" class="font-mono text-xl font-bold text-indigo-700 min-w-[3.5rem] text-right">278</span>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-bold text-sm text-indigo-900">1.º Ano (40%)</span>
+                <span class="text-xs text-slate-500">400 alunos</span>
+              </div>
+              <div class="text-3xl font-extrabold font-mono text-emerald-600 mb-1" id="estrato-1">111</div>
+              <p class="text-xs text-slate-600">Alunos a serem sorteados do 1º Ano</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-bold text-sm text-indigo-900">2.º Ano (35%)</span>
+                <span class="text-xs text-slate-500">350 alunos</span>
+              </div>
+              <div class="text-3xl font-extrabold font-mono text-cyan-600 mb-1" id="estrato-2">97</div>
+              <p class="text-xs text-slate-600">Alunos a serem sorteados do 2º Ano</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-bold text-sm text-indigo-900">3.º Ano (25%)</span>
+                <span class="text-xs text-slate-500">250 alunos</span>
+              </div>
+              <div class="text-3xl font-extrabold font-mono text-amber-600 mb-1" id="estrato-3">70</div>
+              <p class="text-xs text-slate-600">Alunos a serem sorteados do 3º Ano</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- D. CONGLOMERADOS -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-indigo-700 mb-3">
+          D. Amostragem por Conglomerados (Sorteio de Blocos Inteiros)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Em vez de dividir e sortear indivíduos de cada grupo, sorteiam-se os próprios grupos inteiros (conglomerados). Depois do sorteio dos blocos, entrevista-se todo mundo que pertence aos blocos selecionados.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Para pesquisar a saúde dos professores da rede estadual, sorteiam-se 5 escolas e entrevistam-se todos os professores dessas 5 escolas.
+          </p>
+        </div>
+
+        <!-- SIMULADOR CONGLOMERADOS (TEMA CLARO) -->
+        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+            <div>
+              <h4 class="font-bold text-lg text-slate-900">Simulador: Sorteio de 5 Escolas</h4>
+              <p class="text-xs text-slate-600">Cada escola possui um número diferente de professores. Sorteie 5 blocos inteiros.</p>
+            </div>
+            <button onclick="sortearConglomerados()" class="bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-all shadow">
+              Sortear 5 Escolas
+            </button>
+          </div>
+
+          <div id="status-conglomerado" class="text-xs text-indigo-700 font-semibold">
+            Clique no botão acima para realizar o sorteio dos conglomerados.
+          </div>
+
+          <div id="grid-escolas" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            <!-- Gerado via JS -->
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- SEÇÃO 2: NÃO PROBABILÍSTICA -->
+    <section class="space-y-8 pt-6 border-t border-slate-200">
+      <div class="flex items-center gap-3">
+        <span class="bg-amber-600 text-white font-bold px-3 py-1 rounded-lg text-sm">2</span>
+        <h2 class="text-2xl font-bold text-slate-900">Amostragem Não Aleatória ou Não Probabilística</h2>
+      </div>
+
+      <!-- A. CONVENIÊNCIA (COM GRUPO PERTO vs LONGE E BOTÃO DE ABORDAGEM) -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-amber-700 mb-3">
+          A. Amostragem por Conveniência (Acesso Fácil)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Selecionam-se os participantes simplesmente porque estão mais acessíveis ou próximos do pesquisador. É o método menos rigoroso e corre o risco de criar "bolhas" (vieses).
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Um pesquisador aborda as pessoas que estão passando perto dele no corredor no momento do seu intervalo.
+          </p>
+        </div>
+
+        <!-- SIMULADOR CONVENIÊNCIA (PERTO VS LONGE) -->
+        <div class="bg-amber-50/80 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-200 pb-3">
+            <div>
+              <h4 class="font-bold text-amber-950 text-base">Simulador de Abordagem por Proximidade</h4>
+              <p class="text-xs text-amber-800">Selecione para entrevistar apenas as pessoas que estão ao alcance imediato.</p>
+            </div>
+            <button onclick="entrevistarPerto()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-4 py-2 rounded-lg text-xs shadow transition-all">
+              🚶 Entrevistar Apenas Pessoas Perto
+            </button>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4 pt-2">
+            <!-- Pessoas Próximas -->
+            <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
+              <span class="text-xs font-bold text-amber-900 uppercase block border-b border-slate-100 pb-1">📍 Pessoas Próximas (Raio de 2m)</span>
+              <div id="grid-perto" class="flex flex-wrap gap-2 pt-1">
+                <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♂️ Aluno 1 (Perto)</span>
+                <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♀️ Aluna 2 (Perto)</span>
+                <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♂️ Aluno 3 (Perto)</span>
+              </div>
+            </div>
+
+            <!-- Pessoas Distantes -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2 opacity-70" id="box-longe">
+              <span class="text-xs font-bold text-slate-500 uppercase block border-b border-slate-100 pb-1">🏢 Pessoas Distantes (Outro Bloco / Longe)</span>
+              <div id="grid-longe" class="flex flex-wrap gap-2 pt-1">
+                <span class="bg-slate-100 text-slate-500 text-xs px-2.5 py-1 rounded-md border border-slate-200">🚶 Aluno 4 (Longe)</span>
+                <span class="bg-slate-100 text-slate-500 text-xs px-2.5 py-1 rounded-md border border-slate-200">🚶‍♀️ Aluna 5 (Longe)</span>
+                <span class="bg-slate-100 text-slate-500 text-xs px-2.5 py-1 rounded-md border border-slate-200">🚶 Aluno 6 (Longe)</span>
+              </div>
+            </div>
+          </div>
+
+          <p id="status-conveniencia" class="text-xs font-medium text-amber-900 text-center bg-white/80 py-2 px-3 rounded-lg border border-amber-200">
+            Aguardando abordagem do pesquisador.
+          </p>
+        </div>
+      </article>
+
+      <!-- B. QUOTAS (BOTÃO ÚNICO ALEATÓRIO) -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-amber-700 mb-3">
+          B. Amostragem por Quotas (Divisão por Limites sem Sorteio)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Funciona como uma versão da amostragem estratificada, mas sem sorteio. O pesquisador aborda pessoas na rua preenchendo as vagas de cada perfil até completar a quota estabelecida.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            O pesquisador precisa de 50 homens e 50 mulheres. Conforme vai abordando os transeuntes ao acaso, preenche cada cota. Quando atinge a cota de um grupo, recusa abordagens desse perfil.
+          </p>
+        </div>
+
+        <!-- SIMULADOR QUOTAS (BOTÃO ÚNICO ALEATÓRIO - TEMA CLARO) -->
+        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-3">
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Controle de Quotas (Meta: 50 H / 50 M)</h4>
+              <p class="text-xs text-slate-600">As pessoas surgem aleatoriamente na rua até atingir a meta completa.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="abordarAleatorio()" id="btn-abordar-quota" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all shadow">
+                🎲 Entrevistar Pessoa Aleatória
+              </button>
+              <button onclick="preencherTudoQuota()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-2 rounded-lg transition-all">
+                ⚡ Concluir Tudo
+              </button>
+              <button onclick="resetQuotas()" class="bg-white hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs px-3 py-2 rounded-lg">
+                Resetar
+              </button>
+            </div>
+          </div>
+
+          <div id="log-cotas" class="text-xs font-semibold text-indigo-900 bg-white p-2.5 rounded-lg border border-slate-200 text-center">
+            Clique no botão para iniciar as abordagens aleatórias na rua.
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- Quota Homens -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex justify-between text-xs font-bold mb-2">
+                <span class="text-blue-700">Homens Entrevistados</span>
+                <span id="count-homens" class="text-blue-800 font-mono">0 / 50</span>
+              </div>
+              <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
+                <div id="bar-homens" class="bg-blue-600 h-full w-0 transition-all duration-300"></div>
+              </div>
+            </div>
+
+            <!-- Quota Mulheres -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex justify-between text-xs font-bold mb-2">
+                <span class="text-pink-700">Mulheres Entrevistadas</span>
+                <span id="count-mulheres" class="text-pink-800 font-mono">0 / 50</span>
+              </div>
+              <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
+                <div id="bar-mulheres" class="bg-pink-500 h-full w-0 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- C. BOLA DE NEVE (NUMÉRICO E COM SETAS EX: 1 INDICA OUTROS) -->
+      <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h3 class="text-xl font-bold text-amber-700 mb-3">
+          C. Amostragem Bola de Neve (Indicação em Cadeia)
+        </h3>
+
+        <div class="mb-4">
+          <strong class="text-slate-900 block mb-1">Explicação:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Seleciona-se um participante inicial (semente) que indica novos conhecidos com o mesmo perfil. O processo repete-se em cadeia, fazendo a amostra crescer numericamente.
+          </p>
+        </div>
+
+        <div class="mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <strong class="text-slate-900 block mb-1">Exemplo:</strong>
+          <p class="text-slate-700 leading-relaxed">
+            Num estudo com portadores de doenças raras, a Pessoa 1 indica as Pessoas 2 e 3; a Pessoa 2 indica as Pessoas 4 e 5, expandindo a rede.
+          </p>
+        </div>
+
+        <!-- SIMULADOR BOLA DE NEVE (NUMÉRICO E SETAS) -->
+        <div class="bg-amber-50/80 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-amber-200 pb-3">
+            <div>
+              <h4 class="font-bold text-amber-950 text-sm">Cadeia de Indicação Numérica com Setas</h4>
+              <p class="text-xs text-amber-800">Veja o fluxo "Pessoa X ➔ Indica..." ser construído a cada etapa.</p>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="expandirNeve()" id="btn-neve" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-all shadow">
+                Gerar Indicações (Etapa 1)
+              </button>
+              <button onclick="resetNeve()" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-medium px-3 py-1.5 rounded-lg text-xs">
+                Resetar
+              </button>
+            </div>
+          </div>
+
+          <!-- Container da Rede de Indicações -->
+          <div id="container-neve" class="space-y-3 py-2 font-mono text-xs">
+            <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
+              <span class="bg-amber-500 text-white font-bold px-2 py-0.5 rounded">Pessoa 1 (Semente)</span>
+              <span class="text-slate-400">Aguardando gerar indicações...</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1e2532] text-slate-400 py-6 text-center text-sm font-medium border-t border-slate-800">
+    Estatística Aplicada • Guia Prático e Didático
+  </footer>
+
+  <!-- LÓGICA JAVASCRIPT -->
+  <script>
+    // 1. CASUAL SIMPLES (1 A 500)
+    const grid500 = document.getElementById('grid-500');
+    let elementosSimples = [];
+
+    function inicializarGrid500() {
+      grid500.innerHTML = '';
+      elementosSimples = [];
+      for (let i = 1; i <= 500; i++) {
+        const div = document.createElement('div');
+        div.id = `num-${i}`;
+        div.textContent = i;
+        div.className = 'py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 text-[10px] transition-all';
+        grid500.appendChild(div);
+        elementosSimples.push(i);
+      }
+    }
+
+    function sortearSimples() {
+      inicializarGrid500();
+      const sorteados = [...elementosSimples].sort(() => 0.5 - Math.random()).slice(0, 100);
+      
+      sorteados.forEach(num => {
+        const el = document.getElementById(`num-${num}`);
+        if (el) {
+          el.className = 'py-1 rounded bg-emerald-600 text-white font-bold border border-emerald-400 text-[10px] scale-105 shadow-sm';
+        }
+      });
+
+      document.getElementById('status-simples').textContent = '100 / 100 sorteados com sucesso!';
+    }
+
+    function limparSimples() {
+      inicializarGrid500();
+      document.getElementById('status-simples').textContent = '0 / 100 sorteados';
+    }
+
+    // 2. SISTEMÁTICA (105 PESSOAS - INICIA NO 3)
+    function gerarSistematica() {
+      const step = parseInt(document.getElementById('select-intervalo').value);
+      const grid = document.getElementById('grid-105');
+      grid.innerHTML = '';
+
+      let contadorSorteados = 0;
+      for (let i = 1; i <= 105; i++) {
+        const isSelected = (i % step === 0);
+        if (isSelected) contadorSorteados++;
+
+        const div = document.createElement('div');
+        div.textContent = i;
+        div.className = isSelected 
+          ? 'py-1 rounded bg-indigo-600 text-white font-bold border border-indigo-400 text-[10px]'
+          : 'py-1 rounded bg-slate-50 text-slate-400 border border-slate-200 text-[10px] opacity-70';
+        grid.appendChild(div);
+      }
+
+      document.getElementById('status-sistematica').textContent = `Selecionados: ${contadorSorteados} de 105 pessoas (A cada ${step}º indivíduo)`;
+    }
+
+    // 3. ESTRATIFICADA
+    function atualizarEstratificada(val) {
+      const total = parseInt(val);
+      document.getElementById('val-amostra').textContent = total;
+
+      const e1 = Math.round(total * 0.40);
+      const e2 = Math.round(total * 0.35);
+      const e3 = Math.round(total * 0.25);
+
+      document.getElementById('estrato-1').textContent = e1;
+      document.getElementById('estrato-2').textContent = e2;
+      document.getElementById('estrato-3').textContent = e3;
+    }
+
+    // 4. CONGLOMERADOS
+    const escolasData = [
+      { id: 1, nome: "Escola Estadual A", professores: 32 },
+      { id: 2, nome: "Escola Estadual B", professores: 45 },
+      { id: 3, nome: "Escola Estadual C", professores: 19 },
+      { id: 4, nome: "Escola Estadual D", professores: 52 },
+      { id: 5, nome: "Escola Estadual E", professores: 28 },
+      { id: 6, nome: "Escola Estadual F", professores: 40 },
+      { id: 7, nome: "Escola Estadual G", professores: 23 },
+      { id: 8, nome: "Escola Estadual H", professores: 36 },
+      { id: 9, nome: "Escola Estadual I", professores: 60 },
+      { id: 10, nome: "Escola Estadual J", professores: 15 }
+    ];
+
+    function renderEscolas(sorteadasIds = []) {
+      const container = document.getElementById('grid-escolas');
+      container.innerHTML = '';
+      let totalProfsEntrevistados = 0;
+
+      escolasData.forEach(escola => {
+        const isSelected = sorteadasIds.includes(escola.id);
+        if (isSelected) totalProfsEntrevistados += escola.professores;
+
+        const card = document.createElement('div');
+        card.className = isSelected 
+          ? 'p-3 rounded-xl bg-indigo-600 text-white font-bold border-2 border-emerald-400 shadow-md transition-all scale-105'
+          : 'p-3 rounded-xl bg-white text-slate-500 border border-slate-200 text-xs shadow-sm opacity-80';
+
+        card.innerHTML = `
+          <div class="text-xs font-semibold mb-1">${escola.nome}</div>
+          <div class="text-sm font-mono ${isSelected ? 'text-emerald-300' : 'text-slate-700'}">
+            👨‍🏫 ${escola.professores} profs.
+          </div>
+          <div class="text-[10px] mt-1 ${isSelected ? 'text-indigo-100' : 'text-slate-400'}">
+            ${isSelected ? '✓ ESCOLA SORTEADA' : 'Não Sorteada'}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      if (sorteadasIds.length > 0) {
+        document.getElementById('status-conglomerado').textContent = 
+          `5 Escolas sorteadas! Total de ${totalProfsEntrevistados} professores entrevistados na amostra.`;
+      }
+    }
+
+    function sortearConglomerados() {
+      const embaralhadas = [...escolasData].sort(() => 0.5 - Math.random());
+      const sorteadas = embaralhadas.slice(0, 5).map(e => e.id);
+      renderEscolas(sorteadas);
+    }
+
+    // 5. CONVENIÊNCIA (ENTREVISTAR PERTO)
+    function entrevistarPerto() {
+      const gridPerto = document.getElementById('grid-perto');
+      const boxLonge = document.getElementById('box-longe');
+      const status = document.getElementById('status-conveniencia');
+
+      gridPerto.innerHTML = `
+        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluno 1 (Entrevistado)</span>
+        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluna 2 (Entrevistada)</span>
+        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluno 3 (Entrevistado)</span>
+      `;
+
+      boxLonge.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2 opacity-40 grayscale";
+      status.textContent = "✅ Pesquisador abordou e entrevistou com sucesso apenas os 3 alunos próximos. O grupo distante foi totalmente ignorado pela dificuldade de acesso.";
+    }
+
+    // 6. QUOTAS (BOTÃO ÚNICO COM SORTEIO ALEATÓRIO ATÉ 50/50)
+    let homens = 0;
+    let mulheres = 0;
+
+    function abordarAleatorio() {
+      const log = document.getElementById('log-cotas');
+
+      if (homens >= 50 && mulheres >= 50) {
+        log.textContent = "🎉 Ambas as cotas (50 Homens / 50 Mulheres) já foram concluídas!";
+        return;
+      }
+
+      // Sorteio aleatório de quem passa na rua (50% H / 50% M)
+      const sorteio = Math.random() < 0.5 ? 'homem' : 'mulher';
+
+      if (sorteio === 'homem') {
+        if (homens < 50) {
+          homens += 5;
+          if (homens > 50) homens = 50;
+          log.textContent = "🚶‍♂️ Cinco homens foram abordados na rua e responderam à pesquisa (+5 na cota).";
+        } else {
+          log.textContent = "🚫 Um homem passou, mas a Cota de Homens já está cheia (50/50)! Abordagem recusada.";
+        }
+      } else {
+        if (mulheres < 50) {
+          mulheres += 5;
+          if (mulheres > 50) mulheres = 50;
+          log.textContent = "🚶‍♀️ Cinco mulheres foram abordadas na rua e responderam à pesquisa (+5 na cota).";
+        } else {
+          log.textContent = "🚫 Uma mulher passou, mas a Cota de Mulheres já está cheia (50/50)! Abordagem recusada.";
+        }
+      }
+
+      atualizarQuotas();
+    }
+
+    function preencherTudoQuota() {
+      homens = 50;
+      mulheres = 50;
+      document.getElementById('log-cotas').textContent = "⚡ Amostragem por cotas finalizada! 50 Homens e 50 Mulheres entrevistados.";
+      atualizarQuotas();
+    }
+
+    function resetQuotas() {
+      homens = 0;
+      mulheres = 0;
+      document.getElementById('log-cotas').textContent = "Clique no botão para iniciar as abordagens aleatórias na rua.";
+      atualizarQuotas();
+    }
+
+    function atualizarQuotas() {
+      document.getElementById('count-homens').textContent = `${homens} / 50`;
+      document.getElementById('bar-homens').style.width = `${(homens / 50) * 100}%`;
+
+      document.getElementById('count-mulheres').textContent = `${mulheres} / 50`;
+      document.getElementById('bar-mulheres').style.width = `${(mulheres / 50) * 100}%`;
+    }
+
+    // 7. BOLA DE NEVE (NUMÉRICA E COM SETAS EX: 1 INDICA OUTROS)
+    let etapaNeve = 0;
+
+    function expandirNeve() {
+      const container = document.getElementById('container-neve');
+      const btn = document.getElementById('btn-neve');
+
+      if (etapaNeve === 0) {
+        container.innerHTML = `
+          <div class="bg-white p-3 rounded-xl border border-amber-300 shadow-sm space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="bg-indigo-600 text-white font-bold px-2.5 py-1 rounded">Pessoa 1</span>
+              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
+              <span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-300">Pessoa 2</span>
+              <span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-300">Pessoa 3</span>
+            </div>
+          </div>
+        `;
+        etapaNeve = 1;
+        btn.textContent = "Gerar Indicações (Etapa 2)";
+      } else if (etapaNeve === 1) {
+        container.innerHTML += `
+          <div class="bg-white p-3 rounded-xl border border-amber-300 shadow-sm space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="bg-emerald-700 text-white font-bold px-2.5 py-1 rounded">Pessoa 2</span>
+              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
+              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 4</span>
+              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 5</span>
+            </div>
+            <div class="flex items-center gap-2 pt-1 border-t border-slate-100">
+              <span class="bg-emerald-700 text-white font-bold px-2.5 py-1 rounded">Pessoa 3</span>
+              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
+              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 6</span>
+              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 7</span>
+            </div>
+          </div>
+        `;
+        etapaNeve = 2;
+        btn.textContent = "Rede Concluída!";
+        btn.disabled = true;
+        btn.className = "bg-slate-300 text-slate-500 font-bold px-3.5 py-1.5 rounded-lg text-xs cursor-not-allowed";
+      }
+    }
+
+    function resetNeve() {
+      etapaNeve = 0;
+      const container = document.getElementById('container-neve');
+      const btn = document.getElementById('btn-neve');
+
+      container.innerHTML = `
+        <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
+          <span class="bg-amber-500 text-white font-bold px-2 py-0.5 rounded">Pessoa 1 (Semente)</span>
+          <span class="text-slate-400">Aguardando gerar indicações...</span>
+        </div>
+      `;
+
+      btn.disabled = false;
+      btn.textContent = "Gerar Indicações (Etapa 1)";
+      btn.className = "bg-amber-600 hover:bg-amber-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-all shadow";
+    }
+
+    // Inicialização ao carregar a página
+    window.onload = function() {
+      inicializarGrid500();
+      gerarSistematica();
+      renderEscolas();
+    };
+  </script>
+</body>
+</html>

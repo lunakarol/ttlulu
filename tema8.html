@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervalo de Confiança - Estatística para Pesquisa</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons para ícones visuais -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOPO (Cabeçalho) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-14 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        Intervalo de Confiança (IC)
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Entenda como medir o nível de segurança e a precisão dos dados ao aplicar resultados de uma amostra para toda a população.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL (TEMA CLARO E DIDÁTICO) -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
+
+    <!-- SEÇÃO 1: O QUE É O IC -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">1. O que é o Intervalo de Confiança?</h2>
+      </div>
+      
+      <p class="text-slate-600 leading-relaxed mb-6">
+        O <strong>Intervalo de Confiança (IC)</strong> indica a margem de segurança do resultado de uma pesquisa. Ele estabelece uma faixa de valores onde há alta probabilidade de estar o verdadeiro dado da <strong>população inteira</strong>, a partir dos dados observados apenas na <strong>amostra</strong>.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/80">
+          <div class="flex items-center space-x-2 text-indigo-600 font-bold mb-2">
+            <i data-lucide="target" class="w-5 h-5"></i>
+            <span>Precisão</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Mostra o quão próximo o resultado da sua amostra está do valor real da população.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/80">
+          <div class="flex items-center space-x-2 text-indigo-600 font-bold mb-2">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+            <span>Segurança</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Geralmente usa-se <strong>95% de confiança</strong>, garantindo alta confiabilidade estatística.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/80">
+          <div class="flex items-center space-x-2 text-indigo-600 font-bold mb-2">
+            <i data-lucide="scale" class="w-5 h-5"></i>
+            <span>Incerteza</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Define limites mínimos e máximos para evitar tirar conclusões precipitadas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: EXEMPLO PRÁTICO DA SAÚDE BUCAL -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="stethoscope"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">2. Exemplo Prático na Pesquisa</h2>
+          <p class="text-xs text-slate-500">Análise de estudo epidemiológico em saúde bucal</p>
+        </div>
+      </div>
+
+      <div class="bg-indigo-50/50 border border-indigo-100 rounded-2xl p-6 md:p-8">
+        <div class="flex items-center space-x-2 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-2">
+          <i data-lucide="quote" class="w-4 h-4"></i>
+          <span>Afirmação do Estudo</span>
+        </div>
+        
+        <blockquote class="text-slate-800 font-medium text-lg md:text-xl italic mb-6">
+          “O número médio de dentes perdidos entre adultos de 35 a 44 anos é de <span class="text-indigo-600 font-bold">7,21</span> (IC-95% = 6,6 a 7,8).”
+        </blockquote>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+            <h4 class="font-bold text-slate-800 text-sm mb-1">O que isso significa na prática?</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Se todos os adultos da população fossem avaliados, há <strong>95% de certeza</strong> de que a média real de dentes perdidos estaria entre <strong>6,6 e 7,8</strong>.
+            </p>
+          </div>
+
+          <div class="bg-white p-4 rounded-xl border border-indigo-100 shadow-sm">
+            <h4 class="font-bold text-slate-800 text-sm mb-1">Repetição do Estudo (100 vezes)</h4>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Se a pesquisa fosse repetida 100 vezes com amostras diferentes, o resultado cairia dentro dessa faixa (6,6 a 7,8) em <strong>95 dessas 100 vezes</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: O TAMANHO DA AMOSTRA AFETA A PRECISÃO (E NÃO O NÍVEL DE CONFIANÇA) -->
+    <!-- SEÇÃO 3: REFEITA - SEM SÍMBOLOS LIXO E COM O OPOSTO -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="users"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">3. Como o tamanho do grupo muda o resultado?</h2>
+          <p class="text-xs text-slate-500">Veja o que acontece ao estudar poucas pessoas versus muitas pessoas</p>
+        </div>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Um erro comum é achar que estudar menos pessoas diminui a nossa certeza. Na verdade, o <strong>Nível de Confiança continua o mesmo (95%)</strong>. O que muda de verdade é a <strong>largura da nossa estimativa (a precisão)</strong>.
+      </p>
+
+      <!-- COMPARATIVO VISUAL LADO A LADO COM O OPOSTO -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        
+        <!-- OPÇÃO 1: AMOSTRA PEQUENA -->
+        <div class="p-5 rounded-xl border-2 border-amber-200 bg-amber-50/40">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Poucas Pessoas Estudadas</span>
+            <span class="text-xs text-slate-500 font-semibold">Certeza: 95%</span>
+          </div>
+          
+          <h3 class="font-bold text-slate-900 text-base mb-2">Intervalo MENSURÁVEL E LARGO (Pouca Precisão)</h3>
+          
+          <div class="bg-white p-3 rounded-lg border border-amber-200 mb-3 text-center">
+            <span class="text-xs text-slate-400 block uppercase font-semibold">Estimativa da Média de Dentes Perdidos</span>
+            <span class="text-lg font-extrabold text-amber-700">Entre 5,1 e 9,3 dentes</span>
+          </div>
+
+          <p class="text-xs text-amber-900 leading-relaxed">
+            <strong>O que acontece:</strong> Como entrevistamos um grupo pequeno, a incerteza é maior. Para continuarmos tendo 95% de certeza, precisamos aceitar uma margem de erro bem grande.
+          </p>
+        </div>
+
+        <!-- OPÇÃO 2: AMOSTRA GRANDE (O OPOSTO) -->
+        <div class="p-5 rounded-xl border-2 border-emerald-200 bg-emerald-50/40">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Muitas Pessoas Estudadas</span>
+            <span class="text-xs text-slate-500 font-semibold">Certeza: 95%</span>
+          </div>
+          
+          <h3 class="font-bold text-slate-900 text-base mb-2">Intervalo ESTREITO E EXACTO (Muita Precisão)</h3>
+          
+          <div class="bg-white p-3 rounded-lg border border-emerald-200 mb-3 text-center">
+            <span class="text-xs text-slate-400 block uppercase font-semibold">Estimativa da Média de Dentes Perdidos</span>
+            <span class="text-lg font-extrabold text-emerald-700">Entre 7,0 e 7,4 dentes</span>
+          </div>
+
+          <p class="text-xs text-emerald-900 leading-relaxed">
+            <strong>O oposto acontece:</strong> Quanto mais pessoas entrevistamos, mais perto chegamos da realidade. O intervalo fica bem curto e cravado, reduzindo a margem de erro.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CAIXA RESUMO DIDÁTICA E CLARA -->
+      <div class="bg-indigo-50/80 border border-indigo-100 p-4 rounded-xl flex items-start space-x-3">
+        <i data-lucide="check-circle-2" class="text-indigo-600 shrink-0 mt-0.5 w-5 h-5"></i>
+        <div class="text-xs text-indigo-950 leading-relaxed">
+          <strong>Entenda a lógica de forma simples:</strong><br>
+          • <strong>Grupo menor de pessoas:</strong> A margem de erro cresce e o intervalo fica mais <strong>amplo (vago)</strong>.<br>
+          • <strong>Grupo maior de pessoas:</strong> A margem de erro encolhe e o intervalo fica mais <strong>curto (preciso)</strong>.
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SEÇÃO 4: O QUE FICOU DE FORA (OS 5%) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-amber-100 text-amber-600 rounded-xl">
+          <i data-lucide="percent"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">4. Por que deixamos 5% de fora?</h2>
+          <p class="text-xs text-slate-500">Entendendo a margem dos valores extremos</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-amber-200 bg-amber-50/40">
+          <h3 class="font-bold text-amber-950 text-base mb-2 flex items-center space-x-2">
+            <i data-lucide="alert-circle" class="w-4 h-4 text-amber-600"></i>
+            <span>Valores Extremos (Acaso)</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Os <strong>5% excluídos</strong> do intervalo representam situações raras e atípicas. Esses valores têm uma chance muito pequena de representarem a realidade e geralmente ocorrem por mero acaso na amostra.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-indigo-100 bg-indigo-50/40">
+          <h3 class="font-bold text-indigo-950 text-base mb-2 flex items-center space-x-2">
+            <i data-lucide="check-circle" class="w-4 h-4 text-indigo-600"></i>
+            <span>Estimativa Confiável</span>
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ao descartar esses 5% mais extremos, o pesquisador consegue um intervalo mais limpo e focado onde há <strong>máxima probabilidade</strong> de encontrar o valor verdadeiro da população.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#1a1b35] text-slate-400 text-center py-6 text-sm border-t border-slate-800">
+    <p>Estatística para Pesquisa &copy; 2026 - Material Didático e Interativo</p>
+  </footer>
+
+  <!-- LÓGICA DO SIMULADOR JS -->
+  <script>
+    lucide.createIcons();
+
+    const slider = document.getElementById('sampleSlider');
+    const display = document.getElementById('sampleDisplay');
+    const minVal = document.getElementById('minVal');
+    const maxVal = document.getElementById('maxVal');
+    const icBar = document.getElementById('icBar');
+
+    const mean = 7.21;
+
+    slider.addEventListener('input', function() {
+      const n = parseInt(this.value);
+      display.textContent = n;
+
+      // Cálculo simplificado do erro padrão para demonstração
+      const margin = 1.96 * (2.5 / Math.sqrt(n));
+      const min = Math.max(0, mean - margin);
+      const max = mean + margin;
+
+      minVal.textContent = min.toFixed(2).replace('.', ',');
+      maxVal.textContent = max.toFixed(2).replace('.', ',');
+
+      // Ajusta a largura visual da barra de confiança
+      // Mapeamento visual relativo para a régua
+      const leftPercent = Math.max(5, 50 - (margin * 12));
+      const widthPercent = Math.min(90, (margin * 24));
+
+      icBar.style.left = leftPercent + '%';
+      icBar.style.width = widthPercent + '%';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entendendo o Valor p - Estatística para Pesquisa</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOPO (Cabeçalho) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-14 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        O que é o Valor p (p-value)?
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Descubra como os cientistas descartam a sorte e o acaso para comprovar descobertas e quais riscos correm no caminho.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL (TEMA CLARO, DINÂMICO E VISUAL) -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- SEÇÃO 1: CONCEITO VISUAL DO VALOR P -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="dices"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">1. Medindo a sorte ou o acaso</h2>
+      </div>
+      
+      <p class="text-slate-600 leading-relaxed mb-6">
+        O <strong>Valor p</strong> é a probabilidade de o resultado encontrado no seu estudo ter acontecido simplesmente por <strong>coincidência (acaso)</strong>, mesmo que na verdade não haja efeito nenhum (Hipótese Nula $H_0$).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50 flex items-start space-x-4">
+          <div class="p-3 bg-red-100 text-red-600 rounded-lg shrink-0">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-800 text-lg">Valor p Alto (ex: &gt; 0,05)</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Grande chance de ser <strong>coincidência</strong>. Não há provas suficientes para dizer que o tratamento funciona.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl border border-indigo-100 bg-indigo-50/50 flex items-start space-x-4">
+          <div class="p-3 bg-emerald-100 text-emerald-600 rounded-lg shrink-0">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-indigo-950 text-lg">Valor p Baixo (ex: ≤ 0,05)</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Raríssimo de ser sorte. Rejeitamos a $H_0$ e consideramos o efeito <strong>real e estatisticamente significativo</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: SIMULADOR INTERATIVO DO VALOR P -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-indigo-200">
+      <div class="flex items-center space-x-3 mb-2">
+        <div class="p-2.5 bg-indigo-600 text-white rounded-xl">
+          <i data-lucide="sliders"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">2. Simulador Interativo de Valor p</h2>
+          <p class="text-xs text-indigo-600 font-semibold uppercase tracking-wider">Ajuste a régua e veja a tomada de decisão</p>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-slate-50 p-6 rounded-xl border border-slate-200">
+        <label for="pSlider" class="block font-semibold text-slate-700 mb-2">
+          Selecione o Valor p obtido no seu estudo:
+        </label>
+        
+        <div class="flex items-center space-x-4">
+          <input type="range" id="pSlider" min="0.001" max="0.15" step="0.001" value="0.03" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+          <span id="pValDisplay" class="text-2xl font-extrabold text-indigo-600 bg-white px-4 py-1.5 rounded-lg border border-slate-200 min-w-[100px] text-center shadow-sm">
+            0,030
+          </span>
+        </div>
+
+        <!-- BARRA VISUAL DE SIGNIFICÂNCIA -->
+        <div class="mt-6">
+          <div class="flex justify-between text-xs font-semibold text-slate-500 mb-1">
+            <span>0.00 (Efeito Forte)</span>
+            <span class="text-amber-600">Limite α = 0,05 (5%)</span>
+            <span>0.15 (Efeito Fraco / Acaso)</span>
+          </div>
+          <div class="w-full bg-slate-200 h-4 rounded-full overflow-hidden relative">
+            <div class="absolute left-[33.3%] top-0 bottom-0 w-1 bg-amber-500 z-10" title="Limite de 5%"></div>
+            <div id="pProgressBar" class="h-full transition-all duration-300 bg-emerald-500" style="width: 20%;"></div>
+          </div>
+        </div>
+
+        <!-- DADOS DA DECISÃO DA IA/SIMULADOR -->
+        <div id="decisionBox" class="mt-6 p-5 rounded-xl border transition-all duration-300 bg-emerald-50 border-emerald-200">
+          <div class="flex items-start space-x-3">
+            <div id="decisionIcon" class="p-2 bg-emerald-500 text-white rounded-lg">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <div>
+              <h3 id="decisionTitle" class="font-bold text-emerald-950 text-lg">Resultado Estatisticamente Significativo (p ≤ 0,05)</h3>
+              <p id="decisionDesc" class="text-emerald-800 text-sm mt-1">
+                A probabilidade de ser apenas sorte é de <strong>3.0%</strong>. Como é menor ou igual a 5%, <strong>Rejeitamos a Hipótese Nula ($H_0$)</strong>. O efeito do estudo é real!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: EXEMPLOS PRÁTICOS (AMPLIADA E EM TEMA CLARO) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="layout-grid"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">3. Exemplos Práticos do Dia a Dia</h2>
+          <p class="text-xs text-slate-500">Veja como o Valor p é aplicado em diferentes áreas</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- EXEMPLO 1: SAÚDE BUCAL -->
+        <div class="p-6 rounded-xl border border-indigo-100 bg-indigo-50/40 hover:shadow-md transition-all">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm mb-3">
+            <i data-lucide="stethoscope" class="w-5 h-5"></i>
+            <span>Saúde Bucal & Prevenção</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Orientação reduz a perda de dentes?</h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Pesquisadores compararam pessoas que receberam aulas de higiene bucal com pessoas que não receberam.
+          </p>
+          <div class="bg-white p-3.5 rounded-lg border border-indigo-100 space-y-1">
+            <p class="text-xs font-semibold text-emerald-600">Resultado: p = 0,001 (0,1%)</p>
+            <p class="text-xs text-slate-600">
+              <strong>Decisão:</strong> Rejeita $H_0$. Há apenas 0,1% de chance de ser sorte. A orientação de higiene realmente protege os dentes!
+            </p>
+          </div>
+        </div>
+
+        <!-- EXEMPLO 2: NOVO MEDICAMENTO -->
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50/80 hover:shadow-md transition-all">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm mb-3">
+            <i data-lucide="pill" class="w-5 h-5"></i>
+            <span>Medicina & Farmácia</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Remédio novo diminui a dor de cabeça?</h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Comparou-se um novo analgésico com uma pílula de farinha (placebo).
+          </p>
+          <div class="bg-white p-3.5 rounded-lg border border-slate-200 space-y-1">
+            <p class="text-xs font-semibold text-emerald-600">Resultado: p = 0,02 (2%)</p>
+            <p class="text-xs text-slate-600">
+              <strong>Decisão:</strong> Rejeita $H_0$. Como 2% é menor que 5%, comprova-se que o remédio realmente funciona melhor que o placebo.
+            </p>
+          </div>
+        </div>
+
+        <!-- EXEMPLO 3: MARKETING E VENDAS -->
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50/80 hover:shadow-md transition-all">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm mb-3">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <span>Marketing & Negócios</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Botão Verde vende mais que o Botão Azul?</h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Uma loja virtual testou duas cores de botão de compra em 1.000 visitantes.
+          </p>
+          <div class="bg-white p-3.5 rounded-lg border border-slate-200 space-y-1">
+            <p class="text-xs font-semibold text-red-500">Resultado: p = 0,18 (18%)</p>
+            <p class="text-xs text-slate-600">
+              <strong>Decisão:</strong> Aceita $H_0$. A chance da diferença ser apenas coincidência é de 18% (alta). As cores vendem praticamente o mesmo.
+            </p>
+          </div>
+        </div>
+
+        <!-- EXEMPLO 4: EDUCAÇÃO -->
+        <div class="p-6 rounded-xl border border-indigo-100 bg-indigo-50/40 hover:shadow-md transition-all">
+          <div class="flex items-center space-x-2 text-indigo-700 font-bold text-sm mb-3">
+            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            <span>Educação & Ensino</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base mb-2">Aulas interativas melhoram as notas?</h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Uma escola aplicou um método com jogos para a Turma A e método tradicional para a Turma B.
+          </p>
+          <div class="bg-white p-3.5 rounded-lg border border-indigo-100 space-y-1">
+            <p class="text-xs font-semibold text-emerald-600">Resultado: p = 0,04 (4%)</p>
+            <p class="text-xs text-slate-600">
+              <strong>Decisão:</strong> Rejeita $H_0$. O método interativo trouxe um ganho real na aprendizagem dos alunos.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: RISCO NA DECISÃO (DESCOMPLICADO COM ANALOGIA E EXPLICADOR) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-amber-100 text-amber-600 rounded-xl">
+          <i data-lucide="shield-alert"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">4. Entendendo os Riscos da Decisão (Erro Tipo I e II)</h2>
+          <p class="text-xs text-slate-500">Por que nunca temos 100% de certeza?</p>
+        </div>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Como analisamos apenas uma <strong>amostra</strong> (uma parte das pessoas) e não a população inteira, existe sempre uma margem de incerteza. Para entender fácil os erros, pense em um **Tribunal de Justiça**:
+      </p>
+
+      <!-- ANALOGIA DO TRIBUNAL -->
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- ERRO TIPO I -->
+        <div class="p-6 rounded-2xl border-2 border-red-200 bg-red-50/50 relative overflow-hidden">
+          <span class="absolute top-3 right-3 bg-red-200 text-red-800 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">Falso Positivo</span>
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="p-2 bg-red-500 text-white rounded-lg">
+              <i data-lucide="user-x"></i>
+            </div>
+            <h3 class="font-extrabold text-red-950 text-lg">Erro Tipo I</h3>
+          </div>
+          <p class="text-slate-700 text-sm font-semibold mb-2">Condenar um inocente 👨‍⚖️</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-3">
+            Na pesquisa: O cientista diz que o remédio <strong>funciona</strong>, mas na verdade ele <strong>não funciona</strong> (foi apenas sorte na amostra).
+          </p>
+          <div class="bg-white p-3 rounded-lg border border-red-200 text-xs text-red-700">
+            🛡️ <strong>Como evitamos?</strong> Fixamos o limite do Valor p em no máximo <strong>5% (0,05)</strong>.
+          </div>
+        </div>
+
+        <!-- ERRO TIPO II -->
+        <div class="p-6 rounded-2xl border-2 border-amber-200 bg-amber-50/50 relative overflow-hidden">
+          <span class="absolute top-3 right-3 bg-amber-200 text-amber-800 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">Falso Negativo</span>
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="p-2 bg-amber-500 text-white rounded-lg">
+              <i data-lucide="user-check"></i>
+            </div>
+            <h3 class="font-extrabold text-amber-950 text-lg">Erro Tipo II</h3>
+          </div>
+          <p class="text-slate-700 text-sm font-semibold mb-2">Absolver um culpado 🔓</p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-3">
+            Na pesquisa: O cientista diz que o remédio <strong>não funciona</strong>, mas na verdade ele <strong>funcionava sim</strong> (a amostra foi pequena demais para provar).
+          </p>
+          <div class="bg-white p-3 rounded-lg border border-amber-200 text-xs text-amber-800">
+            🛡️ <strong>Como evitamos?</strong> Aumentando o tamanho da amostra estudada.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MATRIZ FACILITADA EM TEMA CLARO -->
+      <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+        <h4 class="font-bold text-slate-800 mb-3 text-sm flex items-center space-x-2">
+          <i data-lucide="table" class="w-4 h-4 text-indigo-600"></i>
+          <span>Resumo Rápido da Matriz de Decisão</span>
+        </h4>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs md:text-sm">
+            <thead>
+              <tr class="border-b border-slate-300 text-slate-500">
+                <th class="py-2 px-3">Sua Conclusão</th>
+                <th class="py-2 px-3 text-slate-700 font-bold">Se a Verdade for: Não Há Efeito Real</th>
+                <th class="py-2 px-3 text-slate-700 font-bold">Se a Verdade for: Existe Efeito Real</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="py-3 px-3 font-semibold text-indigo-900">"Encontrei Efeito!" <br><span class="text-[11px] font-normal text-slate-500">(Rejeitou H₀)</span></td>
+                <td class="py-3 px-3 text-red-600 bg-red-50/50 font-medium">❌ Erro Tipo I <br>(Falso Positivo)</td>
+                <td class="py-3 px-3 text-emerald-600 bg-emerald-50/50 font-bold">✅ Decisão Correta!</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-indigo-900">"Não Há Efeito!" <br><span class="text-[11px] font-normal text-slate-500">(Aceitou H₀)</span></td>
+                <td class="py-3 px-3 text-emerald-600 bg-emerald-50/50 font-bold">✅ Decisão Correta!</td>
+                <td class="py-3 px-3 text-amber-700 bg-amber-50/50 font-medium">❌ Erro Tipo II <br>(Falso Negativo)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#1a1b35] text-slate-400 text-center py-6 text-sm border-t border-slate-800">
+    <p>Estatística para Pesquisa &copy; 2026 - Material Didático e Interativo</p>
+  </footer>
+
+  <!-- LÓGICA DO SIMULADOR JS -->
+  <script>
+    lucide.createIcons();
+
+    const slider = document.getElementById('pSlider');
+    const display = document.getElementById('pValDisplay');
+    const progressBar = document.getElementById('pProgressBar');
+    const decisionBox = document.getElementById('decisionBox');
+    const decisionTitle = document.getElementById('decisionTitle');
+    const decisionDesc = document.getElementById('decisionDesc');
+    const decisionIcon = document.getElementById('decisionIcon');
+
+    slider.addEventListener('input', function() {
+      const pVal = parseFloat(this.value);
+      display.textContent = pVal.toFixed(3).replace('.', ',');
+      
+      // Atualiza largura da barra
+      const percent = (pVal / 0.15) * 100;
+      progressBar.style.width = Math.min(percent, 100) + '%';
+
+      if (pVal <= 0.05) {
+        // Significativo
+        progressBar.className = "h-full transition-all duration-300 bg-emerald-500";
+        decisionBox.className = "mt-6 p-5 rounded-xl border transition-all duration-300 bg-emerald-50 border-emerald-200";
+        decisionIcon.className = "p-2 bg-emerald-500 text-white rounded-lg";
+        decisionIcon.innerHTML = '<i data-lucide="check-circle-2"></i>';
+        decisionTitle.className = "font-bold text-emerald-950 text-lg";
+        decisionTitle.textContent = "Resultado Significativo (p ≤ 0,05)";
+        decisionDesc.innerHTML = `A chance de ser mera coincidência é de apenas <strong>${(pVal*100).toFixed(1)}%</strong>. Por ser menor que 5%, <strong>Rejeitamos a Hipótese Nula (H₀)</strong> e confirmamos o efeito real.`;
+      } else {
+        // Não significativo
+        progressBar.className = "h-full transition-all duration-300 bg-red-500";
+        decisionBox.className = "mt-6 p-5 rounded-xl border transition-all duration-300 bg-red-50 border-red-200";
+        decisionIcon.className = "p-2 bg-red-500 text-white rounded-lg";
+        decisionIcon.innerHTML = '<i data-lucide="x-circle"></i>';
+        decisionTitle.className = "font-bold text-red-950 text-lg";
+        decisionTitle.textContent = "Sem Significância Estatística (p > 0,05)";
+        decisionDesc.innerHTML = `A probabilidade de ser mero acaso é alta (<strong>${(pVal*100).toFixed(1)}%</strong>). Devemos <strong>Aceitar a Hipótese Nula (H₀)</strong>, pois não há evidências suficientes para provar o efeito.`;
+      }
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatística para Pesquisa - Guia Educativo</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-hover: #4338ca;
+      --primary-light: #e0e7ff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --bg-light: #f9fafb;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .topo {
+      background-color: #1e1b4b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .topo .logo {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .topo .logo:hover {
+      opacity: 0.9;
+    }
+
+    .topo nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    .topo nav a {
+      color: #c7d2fe;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .topo nav a:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .badge {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #c7d2fe;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin: 50px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      border-left: 5px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .example-box {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      border: 1px solid #7dd3fc;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .example-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .example-icon {
+      font-size: 2rem;
+    }
+
+    .example-header h3 {
+      color: #0369a1;
+      font-size: 1.3rem;
+    }
+
+    .example-body p {
+      color: #0c4a6e;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+    }
+
+    .example-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .detail-card {
+      display: flex;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      gap: 20px;
+    }
+
+    .detail-number {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.4rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-content h3 {
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .detail-content p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .detail-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .detail-content ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+
+    .detail-content ul li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .info-box {
+      background-color: var(--bg-light);
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 10px;
+    }
+
+    .info-box p {
+      margin-bottom: 6px;
+      font-size: 0.93rem;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background-color: var(--text-dark);
+      color: #9ca3af;
+      text-align: center;
+      padding: 28px 0;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .topo {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 14px 16px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .detail-card {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .detail-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="index.html">ESTATÍSTICA PARA PESQUISA</a>
+    <nav>
+      <a href="index.html">Menu principal</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Estatística Descomplicada</span>
+      <h1>População, Amostra e Representatividade</h1>
+      <p>Entenda os conceitos fundamentais que sustentam pesquisas e análises de dados confiáveis.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <h2 class="section-title">1. Conceitos Fundamentais</h2>
+      <div class="cards-grid">
+        
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h3>População</h3>
+          <p>Representa a <strong>totalidade de um grupo</strong> que possui a característica pesquisada. Não se limita a "todas as pessoas do planeta", mas sim ao grupo específico da sua pesquisa (ex: todos os idosos de São Paulo ou todas as lâmpadas produzidas num dia por uma fábrica).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧪</div>
+          <h3>Amostra</h3>
+          <p>É a <strong>fração reduzida</strong> da população consultada na prática. Como pesquisar a população inteira (Censo) é caro, demorado e exige muitos recursos, usa-se a amostra para viabilizar o estudo em tempo e custo.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Representatividade</h3>
+          <p>É a condição que <strong>valida a amostra</strong>. Para projetar resultados na população inteira, a amostra precisa ter um número suficiente de elementos (<em>n</em>) e reproduzir a diversidade e proporção real do grupo de origem.</p>
+        </div>
+
+      </div>
+
+      <!-- Exemplo Prático Destaque -->
+      <div class="example-box">
+        <div class="example-header">
+          <span class="example-icon">🩸</span>
+          <h3>Exemplo do Dia a Dia: Análise de Sangue</h3>
+        </div>
+        <div class="example-body">
+          <p><strong>População:</strong> O seu corpo tem cerca de 5 litros de sangue.</p>
+          <p><strong>Amostra:</strong> Para saber como está a sua saúde, o médico retira apenas uma pequena ampola de 5 ml.</p>
+          <p><strong>Representatividade:</strong> É a garantia de que essa pequena parcela possui as mesmas características e proporções do grupo original (todos os 5 litros de sangue) para gerar um diagnóstico correto de glicose e colesterol.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">2. Como Dimensionar uma Amostra</h2>
+      <p class="section-subtitle">Para calcular com precisão o tamanho da sua amostra, quatro fatores principais devem ser considerados:</p>
+
+      <div class="details-list">
+
+        <!-- Item 1 -->
+        <article class="detail-card">
+          <div class="detail-number">1</div>
+          <div class="detail-content">
+            <h3>Tipo de População</h3>
+            <p>Saber o tamanho total do grupo investigado antes de calcular quantos elementos você vai entrevistar:</p>
+            <ul>
+              <li><strong>População Finita:</strong> Quando o grupo é pequeno ou tem um limite bem definido (menos de 100.000 pessoas).<br><em>Exemplo:</em> Pesquisar os 300 professores de uma determinada escola ou os 5.000 alunos de uma faculdade.</li>
+              <li><strong>População Infinita:</strong> Quando não é possível contar o número exato de integrantes ou quando passa de 100.000 pessoas.<br><em>Exemplo:</em> Pesquisar o número de pessoas sedentárias em um país ou os consumidores de uma grande marca.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="detail-card">
+          <div class="detail-number">2</div>
+          <div class="detail-content">
+            <h3>Margem de Erro (<em>e</em>)</h3>
+            <p>O "desconto" ou tolerância de imprecisão do resultado.</p>
+            <div class="info-box">
+              <p><strong>Como funciona:</strong> Se a pesquisa aponta que 60% das pessoas são sedentárias com uma margem de erro de 5%, significa que o valor real na população está entre 55% e 65%.</p>
+              <p><strong>Regra prática:</strong> O padrão mais usado no meio científico é 5%. Se você quiser uma margem menor (ex: 2%), a pesquisa fica mais precisa, porém exige entrevistar muito mais gente.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="detail-card">
+          <div class="detail-number">3</div>
+          <div class="detail-content">
+            <h3>Nível de Confiança (<em>Z</em> ou <em>S</em>)</h3>
+            <p>A certeza e probabilidade de a pesquisa ter capturado a realidade.</p>
+            <div class="info-box">
+              <p><strong>Como funciona:</strong> O padrão mais adotado é 95%. Isso significa que, se você repetisse a mesma pesquisa 100 vezes (usando amostras diferentes), em 95 delas o resultado real estaria dentro da margem de erro.</p>
+              <p><strong>Regra prática:</strong> Quanto maior a confiança esperada (ex: 99%), mais exigente é o teste e maior precisará ser o tamanho da sua amostra.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="detail-card">
+          <div class="detail-number">4</div>
+          <div class="detail-content">
+            <h3>Proporção da Amostra (<em>p</em> e <em>q</em>)</h3>
+            <p>A estimativa prévia do resultado entre quem tem a característica estudada (<em>p</em>) e quem não tem (<em>q</em>).</p>
+            <ul>
+              <li><strong>Cenário Sem Informação Próvia (Conservador):</strong> Quando não se tem ideia do resultado, adota-se <em>p</em> = 50% e <em>q</em> = 50%. Essa divisão "meio a meio" garante a máxima incerteza e gera o maior tamanho de amostra possível.</li>
+              <li><strong>Cenário Com Informação Próvia:</strong> Usa dados antigos para calibrar o cálculo.<br><em>Exemplo:</em> Se um estudo anterior mostrou que 65% dos adolescentes são sedentários, usa-se <em>p</em> = 65% e <em>q</em> = 35%.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+        
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Estatística Aplicada • Guia Prático e Didático</p>
+    </div>
+  </footer>
+
+</body>
+</html>

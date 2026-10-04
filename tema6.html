@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inferência Estatística - Estatística para Pesquisa</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons para ícones visuais e intutivos -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- TOPO (Cabeçalho) -->
+  <header class="topo bg-[#1a1b35] text-white px-6 md:px-12 py-4 flex items-center justify-between shadow-md">
+    <a class="logo font-bold text-lg md:text-xl tracking-wide hover:text-indigo-300 transition-colors" href="index.html">
+      ESTATÍSTICA PARA PESQUISA
+    </a>
+    <nav class="flex items-center space-x-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
+      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-r from-[#3b3dbf] to-[#4f46e5] text-white py-14 px-6 text-center shadow-inner">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-[#5c5ee6]/80 text-white text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 border border-white/20">
+        ESTATÍSTICA DESCOMPLICADA
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        Inferência Estatística
+      </h1>
+      <p class="text-blue-100 text-base md:text-lg max-w-2xl mx-auto opacity-90 leading-relaxed">
+        Compreenda como estudar uma pequena amostra permite tirar conclusões confiáveis sobre uma população inteira.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL (TEMA CLARO E DIDÁTICO) -->
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- SEÇÃO 1: CONCEITO CHAVE -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="users"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">1. Por que usamos Amostras?</h2>
+      </div>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Estudar uma população inteira é caro, demorado ou até impossível (especialmente quando o grupo é raro ou de difícil acesso). Por isso, estudamos uma <strong>Amostra</strong> e usamos a <strong>Inferência Estatística</strong> para estender os resultados para toda a <strong>População</strong>.
+      </p>
+
+      <!-- REGRA DE OURO -->
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl flex items-start space-x-3">
+        <i data-lucide="alert-circle" class="text-amber-600 shrink-0 mt-0.5"></i>
+        <div>
+          <h4 class="font-semibold text-amber-900 text-sm uppercase tracking-wide">Regra de Ouro da Inferência</h4>
+          <p class="text-amber-800 text-sm mt-1">
+            A inferência estatística só é válida se <strong>todos os indivíduos da população tiverem alguma chance</strong> de serem escolhidos para a amostra.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: COMPARATIVO (DESCRITIVA VS INFERENCIAL) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="git-compare"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">2. Descritiva vs. Inferencial</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- CARD DESCRITIVA -->
+        <div class="border border-slate-200 rounded-xl p-6 hover:border-indigo-300 transition-all bg-slate-50/50">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Parte 1</span>
+          <h3 class="text-xl font-bold text-slate-800 mt-3 mb-2">Estatística Descritiva</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Mostra dados específicos da amostra e tenta prever valores possíveis para a população usando o <strong>Intervalo de Confiança (IC)</strong>, geralmente fixado em 95%.
+          </p>
+          <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs text-slate-500 italic">
+            💡 Exemplo: "Estimamos com 95% de confiança que a média de dentes perdidos na população está entre 1,2 e 2,5."
+          </div>
+        </div>
+
+        <!-- CARD INFERENCIAL -->
+        <div class="border border-indigo-200 rounded-xl p-6 bg-indigo-50/30 hover:border-indigo-400 transition-all">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 bg-indigo-100 px-3 py-1 rounded-full">Parte 2</span>
+          <h3 class="text-xl font-bold text-slate-800 mt-3 mb-2">Estatística Inferencial</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Permite tomar decisões e comparar grupos através do <strong>Teste de Hipóteses</strong>, respondendo se a diferença é real ou mero acaso.
+          </p>
+          <div class="bg-white p-3 rounded-lg border border-indigo-100 text-xs text-indigo-900 italic">
+            💡 Exemplo: "A diferença de cáries entre quem escova 2x ou 3x ao dia aconteceu por acaso ou o tratamento realmente funciona?"
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: TESTE DE HIPÓTESES (ESTUDO DE CASO) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="file-question"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">3. Como funciona o Teste de Hipóteses?</h2>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Uma hipótese é uma suposição sobre a população. O teste estatístico serve para confirmar ou rejeitar essa suposição dividindo-a em duas partes:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-xl">
+          <h4 class="font-bold text-slate-900 text-lg mb-1">Hipótese Nula (H₀)</h4>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Hipótese da Igualdade</p>
+          <p class="text-slate-600 text-sm">
+            Afirma que <strong>não existe diferença</strong> entre os grupos e que qualquer resultado encontrado ocorreu apenas por <strong>acaso</strong>.
+          </p>
+        </div>
+
+        <div class="p-5 border-l-4 border-indigo-600 bg-indigo-50/50 rounded-r-xl">
+          <h4 class="font-bold text-indigo-950 text-lg mb-1">Hipótese Alternativa (H₁)</h4>
+          <p class="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-2">Hipótese da Diferença</p>
+          <p class="text-slate-600 text-sm">
+            É a hipótese adotada caso H₀ seja rejeitada. Prevê que <strong>existe diferença real</strong> entre os grupos testados.
+          </p>
+        </div>
+      </div>
+
+      <!-- EXEMPLO PRÁTICO -->
+      <div class="bg-slate-900 text-white p-6 rounded-2xl">
+        <div class="flex items-center space-x-2 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="flask-conical" class="w-4 h-4"></i>
+          <span>Exemplo Prático na Saúde Bucal</span>
+        </div>
+        <h3 class="text-lg font-semibold mb-3">Eficácia das Orientações de Saúde Bucal</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Imagine um estudo comparando pessoas que receberam orientação de saúde bucal com pessoas que não receberam:
+        </p>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center space-x-2 bg-slate-800 p-3 rounded-lg border border-slate-700">
+            <span class="font-bold text-indigo-400">Aceitamos H₀:</span>
+            <span class="text-slate-300">A média de dentes perdidos é <strong>IGUAL</strong> nos dois grupos (orientação não fez efeito).</span>
+          </div>
+          <div class="flex items-center space-x-2 bg-slate-800 p-3 rounded-lg border border-slate-700">
+            <span class="font-bold text-emerald-400">Rejeitamos H₀:</span>
+            <span class="text-slate-300">A média de dentes perdidos é <strong>DIFERENTE</strong> entre os grupos (orientação fez efeito).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: CRITÉRIO DE DECISÃO (P-VALOR) -->
+    <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200/80">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="p-2.5 bg-indigo-100 text-indigo-600 rounded-xl">
+          <i data-lucide="scale"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900">4. Tomando Decisões Imparciais (O Valor p)</h2>
+      </div>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Para tomar uma decisão sem ser tendencioso, o pesquisador calcula um valor numérico através do teste estatístico. Esse valor mede a distância entre o que foi <strong>observado na amostra</strong> e o que seria <strong>esperado se a H₀ fosse verdadeira</strong>.
+      </p>
+
+      <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-100 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2">
+          <h3 class="font-bold text-indigo-950 text-lg">O famoso Valor p (p-value)</h3>
+          <p class="text-slate-600 text-sm max-w-xl">
+            É a probabilidade de referência usada para decidir se rejeitamos ou não a H₀. Quanto menor o p-valor, menor é a chance do resultado ter sido mera coincidência!
+          </p>
+        </div>
+        <div class="bg-white px-6 py-4 rounded-xl shadow-sm border border-indigo-100 text-center shrink-0">
+          <span class="text-xs font-semibold text-slate-400 uppercase block">Padrão na Ciência</span>
+          <span class="text-2xl font-extrabold text-indigo-600">p &lt; 0,05</span>
+          <span class="text-xs text-slate-500 block mt-1">(Significativo / Rejeita H₀)</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[#1a1b35] text-slate-400 text-center py-6 text-sm border-t border-slate-800">
+    <p>Estatística para Pesquisa &copy; 2026 - Material Didático e Interativo</p>
+  </footer>
+
+  <!-- Inicialização dos ícones Lucide -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
