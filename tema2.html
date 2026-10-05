@@ -37,7 +37,7 @@
     </a>
     <nav class="flex items-center space-x-6 text-sm font-medium">
       <a href="index.html" class="hover:text-indigo-300 transition-colors">Menu principal</a>
-      <a href="quiz.html" class="hover:text-indigo-300 transition-colors">Quiz</a>
+      <a href="#quiz" class="hover:text-indigo-300 transition-colors">Quiz</a>
     </nav>
   </header>
 
@@ -121,7 +121,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR CASUAL SIMPLES (TEMA CLARO) -->
+        <!-- SIMULADOR CASUAL SIMPLES -->
         <div class="bg-indigo-50/80 p-6 rounded-2xl border border-indigo-100 shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-indigo-200/80">
             <div>
@@ -143,9 +143,7 @@
             <span id="status-simples" class="text-indigo-700">0 / 100 sorteados</span>
           </div>
 
-          <!-- Grade de 500 alunos -->
           <div id="grid-500" class="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-20 gap-1.5 h-64 overflow-y-auto p-2 bg-white rounded-xl custom-scrollbar border border-indigo-200 text-center font-mono text-xs shadow-inner">
-            <!-- Gerado via JavaScript (1 a 500) -->
           </div>
         </div>
       </article>
@@ -170,7 +168,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR SISTEMÁTICA (TEMA CLARO & ORDEM CRESCENTE INICIANDO EM 3) -->
+        <!-- SIMULADOR SISTEMÁTICA -->
         <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200">
             <div>
@@ -193,7 +191,6 @@
           </div>
 
           <div id="grid-105" class="grid grid-cols-7 sm:grid-cols-10 md:grid-cols-15 gap-1.5 h-48 overflow-y-auto p-2 bg-white rounded-xl custom-scrollbar border border-slate-200 text-center font-mono text-xs shadow-inner">
-            <!-- Gerado via JS (1 a 105) -->
           </div>
         </div>
       </article>
@@ -226,7 +223,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR ESTRATIFICADA (TEMA CLARO) -->
+        <!-- SIMULADOR ESTRATIFICADA -->
         <div class="bg-indigo-50/80 p-6 rounded-2xl border border-indigo-100 shadow-sm space-y-6">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-200/80 pb-4">
             <div>
@@ -292,7 +289,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR CONGLOMERADOS (TEMA CLARO) -->
+        <!-- SIMULADOR CONGLOMERADOS -->
         <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
             <div>
@@ -309,7 +306,6 @@
           </div>
 
           <div id="grid-escolas" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            <!-- Gerado via JS -->
           </div>
         </div>
       </article>
@@ -322,7 +318,7 @@
         <h2 class="text-2xl font-bold text-slate-900">Amostragem Não Aleatória ou Não Probabilística</h2>
       </div>
 
-      <!-- A. CONVENIÊNCIA (COM GRUPO PERTO vs LONGE E BOTÃO DE ABORDAGEM) -->
+      <!-- A. CONVENIÊNCIA -->
       <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
         <h3 class="text-xl font-bold text-amber-700 mb-3">
           A. Amostragem por Conveniência (Acesso Fácil)
@@ -342,7 +338,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR CONVENIÊNCIA (PERTO VS LONGE) -->
+        <!-- SIMULADOR CONVENIÊNCIA -->
         <div class="bg-amber-50/80 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-200 pb-3">
             <div>
@@ -355,17 +351,15 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-4 pt-2">
-            <!-- Pessoas Próximas -->
             <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm space-y-2">
               <span class="text-xs font-bold text-amber-900 uppercase block border-b border-slate-100 pb-1">📍 Pessoas Próximas (Raio de 2m)</span>
               <div id="grid-perto" class="flex flex-wrap gap-2 pt-1">
                 <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♂️ Aluno 1 (Perto)</span>
-                <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♀️ Aluna 2 (Perto)</span>
+                <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♀ Aluna 2 (Perto)</span>
                 <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-1 rounded-md font-medium border border-amber-200">🚶‍♂️ Aluno 3 (Perto)</span>
               </div>
             </div>
 
-            <!-- Pessoas Distantes -->
             <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2 opacity-70" id="box-longe">
               <span class="text-xs font-bold text-slate-500 uppercase block border-b border-slate-100 pb-1">🏢 Pessoas Distantes (Outro Bloco / Longe)</span>
               <div id="grid-longe" class="flex flex-wrap gap-2 pt-1">
@@ -382,7 +376,7 @@
         </div>
       </article>
 
-      <!-- B. QUOTAS (BOTÃO ÚNICO ALEATÓRIO) -->
+      <!-- B. QUOTAS -->
       <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
         <h3 class="text-xl font-bold text-amber-700 mb-3">
           B. Amostragem por Quotas (Divisão por Limites sem Sorteio)
@@ -402,7 +396,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR QUOTAS (BOTÃO ÚNICO ALEATÓRIO - TEMA CLARO) -->
+        <!-- SIMULADOR QUOTAS -->
         <div class="bg-slate-100 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-3">
             <div>
@@ -427,7 +421,6 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-4">
-            <!-- Quota Homens -->
             <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
               <div class="flex justify-between text-xs font-bold mb-2">
                 <span class="text-blue-700">Homens Entrevistados</span>
@@ -438,7 +431,6 @@
               </div>
             </div>
 
-            <!-- Quota Mulheres -->
             <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
               <div class="flex justify-between text-xs font-bold mb-2">
                 <span class="text-pink-700">Mulheres Entrevistadas</span>
@@ -452,7 +444,7 @@
         </div>
       </article>
 
-      <!-- C. BOLA DE NEVE (NUMÉRICO E COM SETAS EX: 1 INDICA OUTROS) -->
+      <!-- C. BOLA DE NEVE -->
       <article class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
         <h3 class="text-xl font-bold text-amber-700 mb-3">
           C. Amostragem Bola de Neve (Indicação em Cadeia)
@@ -472,7 +464,7 @@
           </p>
         </div>
 
-        <!-- SIMULADOR BOLA DE NEVE (NUMÉRICO E SETAS) -->
+        <!-- SIMULADOR BOLA DE NEVE -->
         <div class="bg-amber-50/80 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-amber-200 pb-3">
             <div>
@@ -489,7 +481,6 @@
             </div>
           </div>
 
-          <!-- Container da Rede de Indicações -->
           <div id="container-neve" class="space-y-3 py-2 font-mono text-xs">
             <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
               <span class="bg-amber-500 text-white font-bold px-2 py-0.5 rounded">Pessoa 1 (Semente)</span>
@@ -498,6 +489,77 @@
           </div>
         </div>
       </article>
+    </section>
+
+    <!-- SEÇÃO QUIZ DE FIXAÇÃO INTERATIVO (PASSO A PASSO COM FEEDBACK) -->
+    <section id="quiz" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6 scroll-mt-20">
+      <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="bg-indigo-100 text-indigo-800 font-bold px-3 py-1 rounded-lg text-xs uppercase tracking-wider">
+            Avaliação de Conhecimento
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">
+            Quiz Interativo de Amostragem
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            Responda às questões e receba o feedback detalhado a cada etapa.
+          </p>
+        </div>
+        <!-- Barra de Progresso -->
+        <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 text-center min-w-[140px]">
+          <span id="quiz-progress-text" class="text-xs font-bold text-indigo-900 block mb-1">Pergunta 1 de 5</span>
+          <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+            <div id="quiz-progress-bar" class="bg-indigo-600 h-full w-1/5 transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD DA PERGUNTA ATUAL -->
+      <div id="quiz-card" class="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-6">
+        <h3 id="quiz-question" class="font-bold text-slate-900 text-lg">
+          <!-- Texto da Pergunta -->
+        </h3>
+
+        <!-- Opções -->
+        <div id="quiz-options" class="space-y-3">
+          <!-- Opções inseridas via JS -->
+        </div>
+
+        <!-- Feedback Container (Escondido inicialmente) -->
+        <div id="quiz-feedback" class="hidden p-4 rounded-xl border text-sm leading-relaxed space-y-2 transition-all">
+          <div id="quiz-feedback-title" class="font-bold text-base flex items-center gap-2"></div>
+          <p id="quiz-feedback-text" class="text-slate-700"></p>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="flex items-center justify-between pt-2">
+          <button id="btn-confirmar" onclick="confirmarResposta()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all shadow active:scale-95">
+            Confirmar Resposta
+          </button>
+          <button id="btn-proxima" onclick="proximaPergunta()" class="hidden bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-all shadow active:scale-95">
+            Próxima Pergunta ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD FINAL DE RESULTADOS (Escondido inicialmente) -->
+      <div id="quiz-result" class="hidden text-center py-8 px-4 space-y-6 bg-slate-50 rounded-xl border border-slate-200">
+        <div class="w-20 h-20 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto text-3xl font-extrabold shadow-inner">
+          🏆
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">Quiz Concluído!</h3>
+          <p id="result-score-text" class="text-lg text-slate-700 mt-2">
+            Você acertou X de 5 perguntas.
+          </p>
+          <p id="result-message" class="text-sm text-slate-500 mt-1">
+            <!-- Mensagem personalizada -->
+          </p>
+        </div>
+        <button onclick="reiniciarQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all shadow">
+          🔄 Tentar Novamente
+        </button>
+      </div>
     </section>
 
   </main>
@@ -509,7 +571,7 @@
 
   <!-- LÓGICA JAVASCRIPT -->
   <script>
-    // 1. CASUAL SIMPLES (1 A 500)
+    // 1. CASUAL SIMPLES
     const grid500 = document.getElementById('grid-500');
     let elementosSimples = [];
 
@@ -545,7 +607,7 @@
       document.getElementById('status-simples').textContent = '0 / 100 sorteados';
     }
 
-    // 2. SISTEMÁTICA (105 PESSOAS - INICIA NO 3)
+    // 2. SISTEMÁTICA
     function gerarSistematica() {
       const step = parseInt(document.getElementById('select-intervalo').value);
       const grid = document.getElementById('grid-105');
@@ -611,169 +673,292 @@
 
         card.innerHTML = `
           <div class="text-xs font-semibold mb-1">${escola.nome}</div>
-          <div class="text-sm font-mono ${isSelected ? 'text-emerald-300' : 'text-slate-700'}">
-            👨‍🏫 ${escola.professores} profs.
-          </div>
-          <div class="text-[10px] mt-1 ${isSelected ? 'text-indigo-100' : 'text-slate-400'}">
-            ${isSelected ? '✓ ESCOLA SORTEADA' : 'Não Sorteada'}
-          </div>
+          <div class="text-[10px] font-normal ${isSelected ? 'text-indigo-100' : 'text-slate-400'}">${escola.professores} Professores</div>
         `;
         container.appendChild(card);
       });
 
       if (sorteadasIds.length > 0) {
-        document.getElementById('status-conglomerado').textContent = 
-          `5 Escolas sorteadas! Total de ${totalProfsEntrevistados} professores entrevistados na amostra.`;
+        document.getElementById('status-conglomerado').textContent = `5 Escolas sorteadas! Total de ${totalProfsEntrevistados} professores entrevistados.`;
+      } else {
+        document.getElementById('status-conglomerado').textContent = 'Clique no botão acima para realizar o sorteio dos conglomerados.';
       }
     }
 
     function sortearConglomerados() {
-      const embaralhadas = [...escolasData].sort(() => 0.5 - Math.random());
-      const sorteadas = embaralhadas.slice(0, 5).map(e => e.id);
+      const ids = escolasData.map(e => e.id);
+      const sorteadas = [...ids].sort(() => 0.5 - Math.random()).slice(0, 5);
       renderEscolas(sorteadas);
     }
 
-    // 5. CONVENIÊNCIA (ENTREVISTAR PERTO)
+    // 5. CONVENIÊNCIA
     function entrevistarPerto() {
-      const gridPerto = document.getElementById('grid-perto');
-      const boxLonge = document.getElementById('box-longe');
-      const status = document.getElementById('status-conveniencia');
-
-      gridPerto.innerHTML = `
-        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluno 1 (Entrevistado)</span>
-        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluna 2 (Entrevistada)</span>
-        <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-md font-bold border border-emerald-400 shadow-sm animate-bounce">✓ Aluno 3 (Entrevistado)</span>
-      `;
-
-      boxLonge.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2 opacity-40 grayscale";
-      status.textContent = "✅ Pesquisador abordou e entrevistou com sucesso apenas os 3 alunos próximos. O grupo distante foi totalmente ignorado pela dificuldade de acesso.";
+      document.getElementById('status-conveniencia').textContent = 'Entrevistas realizadas apenas com as 3 pessoas que estavam no raio de 2m. As demais foram ignoradas!';
     }
 
-    // 6. QUOTAS (BOTÃO ÚNICO COM SORTEIO ALEATÓRIO ATÉ 50/50)
-    let homens = 0;
-    let mulheres = 0;
+    // 6. QUOTAS
+    let countH = 0;
+    let countM = 0;
+
+    function atualizarBarrasQuota() {
+      document.getElementById('count-homens').textContent = `${countH} / 50`;
+      document.getElementById('count-mulheres').textContent = `${countM} / 50`;
+      document.getElementById('bar-homens').style.width = `${(countH / 50) * 100}%`;
+      document.getElementById('bar-mulheres').style.width = `${(countM / 50) * 100}%`;
+    }
 
     function abordarAleatorio() {
-      const log = document.getElementById('log-cotas');
-
-      if (homens >= 50 && mulheres >= 50) {
-        log.textContent = "🎉 Ambas as cotas (50 Homens / 50 Mulheres) já foram concluídas!";
+      if (countH >= 50 && countM >= 50) {
+        document.getElementById('log-cotas').textContent = 'Quotas de Homens e Mulheres totalmente preenchidas!';
         return;
       }
 
-      // Sorteio aleatório de quem passa na rua (50% H / 50% M)
-      const sorteio = Math.random() < 0.5 ? 'homem' : 'mulher';
-
-      if (sorteio === 'homem') {
-        if (homens < 50) {
-          homens += 5;
-          if (homens > 50) homens = 50;
-          log.textContent = "🚶‍♂️ Cinco homens foram abordados na rua e responderam à pesquisa (+5 na cota).";
+      const sorteio = Math.random() < 0.5 ? 'H' : 'M';
+      if (sorteio === 'H') {
+        if (countH < 50) {
+          countH++;
+          document.getElementById('log-cotas').textContent = 'Homem abordado e inserido na cota.';
         } else {
-          log.textContent = "🚫 Um homem passou, mas a Cota de Homens já está cheia (50/50)! Abordagem recusada.";
+          document.getElementById('log-cotas').textContent = 'Homem abordado, mas a cota de homens já está cheia (Recusado).';
         }
       } else {
-        if (mulheres < 50) {
-          mulheres += 5;
-          if (mulheres > 50) mulheres = 50;
-          log.textContent = "🚶‍♀️ Cinco mulheres foram abordadas na rua e responderam à pesquisa (+5 na cota).";
+        if (countM < 50) {
+          countM++;
+          document.getElementById('log-cotas').textContent = 'Mulher abordada e inserida na cota.';
         } else {
-          log.textContent = "🚫 Uma mulher passou, mas a Cota de Mulheres já está cheia (50/50)! Abordagem recusada.";
+          document.getElementById('log-cotas').textContent = 'Mulher abordada, mas a cota de mulheres já está cheia (Recusada).';
         }
       }
-
-      atualizarQuotas();
+      atualizarBarrasQuota();
     }
 
     function preencherTudoQuota() {
-      homens = 50;
-      mulheres = 50;
-      document.getElementById('log-cotas').textContent = "⚡ Amostragem por cotas finalizada! 50 Homens e 50 Mulheres entrevistados.";
-      atualizarQuotas();
+      countH = 50;
+      countM = 50;
+      atualizarBarrasQuota();
+      document.getElementById('log-cotas').textContent = 'Quotas totalmente preenchidas rapidamente!';
     }
 
     function resetQuotas() {
-      homens = 0;
-      mulheres = 0;
-      document.getElementById('log-cotas').textContent = "Clique no botão para iniciar as abordagens aleatórias na rua.";
-      atualizarQuotas();
+      countH = 0;
+      countM = 0;
+      atualizarBarrasQuota();
+      document.getElementById('log-cotas').textContent = 'Clique no botão para iniciar as abordagens aleatórias na rua.';
     }
 
-    function atualizarQuotas() {
-      document.getElementById('count-homens').textContent = `${homens} / 50`;
-      document.getElementById('bar-homens').style.width = `${(homens / 50) * 100}%`;
-
-      document.getElementById('count-mulheres').textContent = `${mulheres} / 50`;
-      document.getElementById('bar-mulheres').style.width = `${(mulheres / 50) * 100}%`;
-    }
-
-    // 7. BOLA DE NEVE (NUMÉRICA E COM SETAS EX: 1 INDICA OUTROS)
-    let etapaNeve = 0;
-
+    // 7. BOLA DE NEVE
+    let etapaNeve = 1;
     function expandirNeve() {
       const container = document.getElementById('container-neve');
-      const btn = document.getElementById('btn-neve');
-
-      if (etapaNeve === 0) {
-        container.innerHTML = `
-          <div class="bg-white p-3 rounded-xl border border-amber-300 shadow-sm space-y-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-indigo-600 text-white font-bold px-2.5 py-1 rounded">Pessoa 1</span>
-              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
-              <span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-300">Pessoa 2</span>
-              <span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded border border-emerald-300">Pessoa 3</span>
-            </div>
-          </div>
-        `;
-        etapaNeve = 1;
-        btn.textContent = "Gerar Indicações (Etapa 2)";
-      } else if (etapaNeve === 1) {
+      if (etapaNeve === 1) {
         container.innerHTML += `
-          <div class="bg-white p-3 rounded-xl border border-amber-300 shadow-sm space-y-2">
-            <div class="flex items-center gap-2">
-              <span class="bg-emerald-700 text-white font-bold px-2.5 py-1 rounded">Pessoa 2</span>
-              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
-              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 4</span>
-              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 5</span>
-            </div>
-            <div class="flex items-center gap-2 pt-1 border-t border-slate-100">
-              <span class="bg-emerald-700 text-white font-bold px-2.5 py-1 rounded">Pessoa 3</span>
-              <span class="text-amber-700 font-bold text-base">➔ Indica:</span>
-              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 6</span>
-              <span class="bg-cyan-100 text-cyan-800 font-bold px-2 py-0.5 rounded border border-cyan-300">Pessoa 7</span>
-            </div>
+          <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
+            <span class="bg-amber-600 text-white font-bold px-2 py-0.5 rounded">Pessoa 1 ➔ Indica:</span>
+            <span class="text-amber-900 font-bold">Pessoa 2 e Pessoa 3</span>
           </div>
         `;
+        document.getElementById('btn-neve').textContent = 'Gerar Indicações (Etapa 2)';
         etapaNeve = 2;
-        btn.textContent = "Rede Concluída!";
-        btn.disabled = true;
-        btn.className = "bg-slate-300 text-slate-500 font-bold px-3.5 py-1.5 rounded-lg text-xs cursor-not-allowed";
+      } else if (etapaNeve === 2) {
+        container.innerHTML += `
+          <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
+            <span class="bg-amber-700 text-white font-bold px-2 py-0.5 rounded">Pessoa 2 ➔ Indica:</span>
+            <span class="text-amber-900 font-bold">Pessoa 4 e Pessoa 5</span>
+          </div>
+          <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
+            <span class="bg-amber-700 text-white font-bold px-2 py-0.5 rounded">Pessoa 3 ➔ Indica:</span>
+            <span class="text-amber-900 font-bold">Pessoa 6 e Pessoa 7</span>
+          </div>
+        `;
+        document.getElementById('btn-neve').textContent = 'Rede Concluída';
+        document.getElementById('btn-neve').disabled = true;
+        document.getElementById('btn-neve').classList.add('opacity-50', 'cursor-not-allowed');
+        etapaNeve = 3;
       }
     }
 
     function resetNeve() {
-      etapaNeve = 0;
+      etapaNeve = 1;
       const container = document.getElementById('container-neve');
-      const btn = document.getElementById('btn-neve');
-
       container.innerHTML = `
         <div class="bg-white p-3 rounded-xl border border-amber-200 shadow-sm flex items-center gap-2">
           <span class="bg-amber-500 text-white font-bold px-2 py-0.5 rounded">Pessoa 1 (Semente)</span>
           <span class="text-slate-400">Aguardando gerar indicações...</span>
         </div>
       `;
-
+      const btn = document.getElementById('btn-neve');
+      btn.textContent = 'Gerar Indicações (Etapa 1)';
       btn.disabled = false;
-      btn.textContent = "Gerar Indicações (Etapa 1)";
-      btn.className = "bg-amber-600 hover:bg-amber-700 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-all shadow";
+      btn.classList.remove('opacity-50', 'cursor-not-allowed');
     }
 
-    // Inicialização ao carregar a página
-    window.onload = function() {
-      inicializarGrid500();
-      gerarSistematica();
-      renderEscolas();
-    };
+    // 8. ESTRUTURA E LÓGICA DO QUIZ DINÂMICO PASSO A PASSO
+    const perguntasQuiz = [
+      {
+        pergunta: "1. Qual é a principal característica da Amostragem Probabilística (Aleatória)?",
+        opcoes: [
+          { id: "A", texto: "Selecionar apenas os indivíduos mais próximos do pesquisador." },
+          { id: "B", texto: "Garantir que todos os indivíduos da população tenham uma chance matemática conhecida de serem sorteados." },
+          { id: "C", texto: "Basear-se exclusivamente em indicações encadeadas dos participantes." },
+          { id: "D", texto: "Escolher participantes até preencher limites predefinidos sem realizar sorteio." }
+        ],
+        correta: "B",
+        explicacao: "Como explicado na introdução: na Amostragem Probabilística, 'todos os indivíduos da população têm uma chance matemática de serem escolhidos. É feita por sorteios e garante maior precisão e isenção'."
+      },
+      {
+        pergunta: "2. Selecionar o 3.º, 6.º, 9.º e 12.º participante de uma lista sequencial utilizando um intervalo regrado é um exemplo de qual técnica?",
+        opcoes: [
+          { id: "A", texto: "Amostragem Bola de Neve" },
+          { id: "B", texto: "Amostragem por Conglomerados" },
+          { id: "C", texto: "Amostragem Sistemática" },
+          { id: "D", texto: "Amostragem por Conveniência" }
+        ],
+        correta: "C",
+        explicacao: "Na Amostragem Sistemática, estabelece-se um intervalo fixo (k) de seleção. O exemplo do texto demonstra exatamente a seleção de cada 3.º elemento (3, 6, 9, 12...)."
+      },
+      {
+        pergunta: "3. Na Amostragem Estratificada, como garante-se a representatividade da amostra em subgrupos?",
+        opcoes: [
+          { id: "A", texto: "Entrevistando blocos inteiros como escolas ou bairros sorteados." },
+          { id: "B", texto: "Dividindo a população em subgrupos (estratos) e sorteando proporcionalmente às percentagens reais de cada um." },
+          { id: "C", texto: "Entrevistando o mesmo número fixo de pessoas por grupo sem importar a proporção real." },
+          { id: "D", texto: "Abordando voluntários aleatórios na rua de forma rápida sem sorteio." }
+        ],
+        correta: "B",
+        explicacao: "A Amostragem Estratificada divide a população em subgrupos e realiza sorteios respeitando as exatas percentagens que esses subgrupos ocupam na população real (ex: 40% do 1º ano, 35% do 2º ano)."
+      },
+      {
+        pergunta: "4. Quando um pesquisador precisa estudar uma população de difícil acesso (ex: doenças raras) e utiliza contatos iniciais para indicar novos conhecidos, qual técnica está sendo usada?",
+        opcoes: [
+          { id: "A", texto: "Amostragem Bola de Neve" },
+          { id: "B", texto: "Amostragem Aleatória Simples" },
+          { id: "C", texto: "Amostragem por Quotas" },
+          { id: "D", texto: "Amostragem Sistemática" }
+        ],
+        correta: "A",
+        explicacao: "A Amostragem Bola de Neve é uma técnica não probabilística em que uma 'semente' inicial indica novos participantes em cadeia, fazendo a amostra crescer numericamente por indicação."
+      },
+      {
+        pergunta: "5. Qual é a diferença fundamental entre a Amostragem Estratificada e a Amostragem por Quotas?",
+        opcoes: [
+          { id: "A", texto: "A Estratificada utiliza sorteio aleatório probabilístico dentro dos estratos, enquanto a por Quotas preenche os grupos sem sorteio." },
+          { id: "B", texto: "A por Quotas sorteia apenas blocos inteiros, enquanto a Estratificada escolhe indivíduos isolados." },
+          { id: "C", texto: "A Estratificada não considera subgrupos populacionais." },
+          { id: "D", texto: "Não há diferença; ambas são técnicas idênticas." }
+        ],
+        correta: "A",
+        explicacao: "A Amostragem por Quotas funciona como uma versão da estratificada, mas não realiza sorteio: o pesquisador apenas aborda pessoas até preencher as quotas necessárias."
+      }
+    ];
+
+    let quizIndiceAtual = 0;
+    let quizPontuacao = 0;
+    let opcaoSelecionada = null;
+
+    function carregarPergunta() {
+      const q = perguntasQuiz[quizIndiceAtual];
+      opcaoSelecionada = null;
+
+      // Progresso
+      document.getElementById('quiz-progress-text').textContent = `Pergunta ${quizIndiceAtual + 1} de ${perguntasQuiz.length}`;
+      document.getElementById('quiz-progress-bar').style.width = `${((quizIndiceAtual + 1) / perguntasQuiz.length) * 100}%`;
+
+      // Texto da pergunta
+      document.getElementById('quiz-question').textContent = q.pergunta;
+
+      // Renderizar Opções
+      const containerOpcoes = document.getElementById('quiz-options');
+      containerOpcoes.innerHTML = '';
+
+      q.opcoes.forEach(opt => {
+        const div = document.createElement('label');
+        div.className = 'quiz-opcao flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/50 hover:border-indigo-200 cursor-pointer transition-all';
+        div.innerHTML = `
+          <input type="radio" name="opcao-quiz" value="${opt.id}" onchange="selecionarOpcao('${opt.id}')" class="accent-indigo-600 w-4 h-4">
+          <span class="text-slate-700 text-sm font-medium"><strong class="text-indigo-900">${opt.id})</strong> ${opt.texto}</span>
+        `;
+        containerOpcoes.appendChild(div);
+      });
+
+      // Reset de visibilidade
+      document.getElementById('quiz-feedback').classList.add('hidden');
+      document.getElementById('btn-confirmar').classList.remove('hidden');
+      document.getElementById('btn-proxima').classList.add('hidden');
+    }
+
+    function selecionarOpcao(id) {
+      opcaoSelecionada = id;
+    }
+
+    function confirmarResposta() {
+      if (!opcaoSelecionada) {
+        alert('Por favor, selecione uma opção antes de confirmar!');
+        return;
+      }
+
+      const q = perguntasQuiz[quizIndiceAtual];
+      const feedbackContainer = document.getElementById('quiz-feedback');
+      const feedbackTitle = document.getElementById('quiz-feedback-title');
+      const feedbackText = document.getElementById('quiz-feedback-text');
+
+      const inputs = document.querySelectorAll('input[name="opcao-quiz"]');
+      inputs.forEach(input => input.disabled = true);
+
+      if (opcaoSelecionada === q.correta) {
+        quizPontuacao++;
+        feedbackContainer.className = 'p-4 rounded-xl border text-sm leading-relaxed space-y-1 bg-emerald-50 border-emerald-200 text-emerald-900';
+        feedbackTitle.innerHTML = '✅ Resposta Correta!';
+      } else {
+        feedbackContainer.className = 'p-4 rounded-xl border text-sm leading-relaxed space-y-1 bg-rose-50 border-rose-200 text-rose-900';
+        feedbackTitle.innerHTML = `❌ Resposta Incorreta (A resposta certa é a opção ${q.correta})`;
+      }
+
+      feedbackText.textContent = q.explicacao;
+      feedbackContainer.classList.remove('hidden');
+
+      document.getElementById('btn-confirmar').classList.add('hidden');
+      document.getElementById('btn-proxima').classList.remove('hidden');
+    }
+
+    function proximaPergunta() {
+      quizIndiceAtual++;
+      if (quizIndiceAtual < perguntasQuiz.length) {
+        carregarPergunta();
+      } else {
+        exibirResultadoFinal();
+      }
+    }
+
+    function exibirResultadoFinal() {
+      document.getElementById('quiz-card').classList.add('hidden');
+      const resultCard = document.getElementById('quiz-result');
+      resultCard.classList.remove('hidden');
+
+      document.getElementById('result-score-text').textContent = `Você acertou ${quizPontuacao} de ${perguntasQuiz.length} perguntas! (${(quizPontuacao / perguntasQuiz.length) * 100}%)`;
+
+      const msgEl = document.getElementById('result-message');
+      if (quizPontuacao === 5) {
+        msgEl.textContent = 'Excelente! Você demonstrou domínio completo sobre os conceitos e métodos de amostragem.';
+      } else if (quizPontuacao >= 3) {
+        msgEl.textContent = 'Muito bem! Você compreendeu os principais pontos das amostragem probabilística e não probabilística.';
+      } else {
+        msgEl.textContent = 'Vale a pena revisar os exemplos do texto acima e tentar o quiz novamente para fixar os conceitos.';
+      }
+    }
+
+    function reiniciarQuiz() {
+      quizIndiceAtual = 0;
+      quizPontuacao = 0;
+      document.getElementById('quiz-result').classList.add('hidden');
+      document.getElementById('quiz-card').classList.remove('hidden');
+      carregarPergunta();
+    }
+
+    // Inicialização
+    inicializarGrid500();
+    gerarSistematica();
+    renderEscolas();
+    carregarPergunta();
   </script>
 </body>
 </html>
